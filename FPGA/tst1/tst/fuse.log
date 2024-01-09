@@ -1,0 +1,30 @@
+Running: /srv/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/lusius/Devel/STM32_Devel/FPGA/tst1/tst/tst1_tst1_sch_tb_isim_beh.exe -prj /home/lusius/Devel/STM32_Devel/FPGA/tst1/tst/tst1_tst1_sch_tb_beh.prj work.tst1_tst1_sch_tb work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/lusius/Devel/STM32_Devel/FPGA/tst1/tst/tst1.vf" into library work
+Analyzing Verilog file "/srv/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Parsing VHDL file "/home/lusius/Devel/STM32_Devel/FPGA/tst1/tst/tst.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 112464 KB
+Fuse CPU Usage: 910 ms
+Compiling module glbl
+Compiling module CB4CLED_HXILINX_tst1
+Compiling module PULLDOWN
+Compiling module tst1
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package vcomponents
+Compiling package vl_types
+Compiling architecture behavioral of entity tst1_tst1_sch_tb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 6 VHDL Units
+Compiled 4 Verilog Units
+Built simulation executable /home/lusius/Devel/STM32_Devel/FPGA/tst1/tst/tst1_tst1_sch_tb_isim_beh.exe
+Fuse Memory Usage: 1213872 KB
+Fuse CPU Usage: 1010 ms
+GCC CPU Usage: 1370 ms

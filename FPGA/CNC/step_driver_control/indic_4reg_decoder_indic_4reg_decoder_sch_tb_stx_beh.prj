@@ -1,0 +1,2 @@
+vhdl isim_temp "indic_4reg_dec_test.vhd"
+verilog isim_temp "/srv/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

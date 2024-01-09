@@ -1,0 +1,82 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml sdc_divider.twx sdc_divider.ncd -o sdc_divider.twr
+sdc_divider.pcf
+
+Design file:              sdc_divider.ncd
+Physical constraint file: sdc_divider.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock SET_DIV_CLK
+-----------------+------------+------------+------------+------------+------------------+--------+
+                 |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source           | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+-----------------+------------+------------+------------+------------+------------------+--------+
+RST              |    2.236(R)|      SLOW  |   -1.044(R)|      FAST  |SET_DIV_CLK_BUFGP |   0.000|
+SET_DIV_DATA_div2|    1.572(R)|      SLOW  |   -0.645(R)|      SLOW  |SET_DIV_CLK_BUFGP |   0.000|
+SET_DIV_EN       |    1.368(R)|      SLOW  |    0.064(R)|      SLOW  |SET_DIV_CLK_BUFGP |   0.000|
+-----------------+------------+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock SYS_CLK
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+DIV_EN      |    1.544(R)|      SLOW  |    0.156(R)|      SLOW  |SYS_CLK_IBUF_BUFG |   0.000|
+RST         |    3.266(R)|      SLOW  |   -1.698(R)|      FAST  |SYS_CLK_IBUF_BUFG |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock SET_DIV_CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+SET_DIV_CLK    |    1.353|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock SYS_CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+SET_DIV_CLK    |    4.629|         |         |         |
+SYS_CLK        |    3.521|    2.965|         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Thu Jul 19 19:40:58 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 384 MB
+
+
+

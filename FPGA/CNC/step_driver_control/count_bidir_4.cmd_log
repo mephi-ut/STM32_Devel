@@ -1,0 +1,2 @@
+sch2hdl -intstyle ise -family spartan6 -verilog count_bidir_4_drc.vf -w /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/count_bidir_4.sch 
+sch2sym -intstyle ise -family spartan6 -w -refsym count_bidir_4 /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/count_bidir_4.sch /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/count_bidir_4.sym 

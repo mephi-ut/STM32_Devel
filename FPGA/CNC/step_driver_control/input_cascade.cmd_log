@@ -1,0 +1,2 @@
+sch2hdl -intstyle ise -family spartan6 -verilog input_cascade_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_cascade.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog input_cascade_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_cascade.sch 

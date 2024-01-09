@@ -1,0 +1,600 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: distance_module.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "distance_module.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "distance_module"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-tqg144
+
+---- Source Options
+Top Module Name                    : distance_module
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf" into library work
+Parsing module <COMP8_HXILINX_distance_module>.
+Parsing module <CB16CE_HXILINX_distance_module>.
+Parsing module <SR16CE_HXILINX_distance_module>.
+Parsing module <SR8CE_HXILINX_distance_module>.
+Parsing module <CB8CE_HXILINX_distance_module>.
+Parsing module <COMP16_HXILINX_distance_module>.
+Parsing module <distance_module>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <distance_module>.
+
+Elaborating module <CB8CE_HXILINX_distance_module>.
+WARNING:HDLCompiler:413 - "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf" Line 131: Result of 9-bit expression is truncated to fit in 8-bit target.
+
+Elaborating module <SR8CE_HXILINX_distance_module>.
+
+Elaborating module <CB16CE_HXILINX_distance_module>.
+WARNING:HDLCompiler:413 - "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf" Line 55: Result of 17-bit expression is truncated to fit in 16-bit target.
+
+Elaborating module <SR16CE_HXILINX_distance_module>.
+
+Elaborating module <COMP16_HXILINX_distance_module>.
+
+Elaborating module <COMP8_HXILINX_distance_module>.
+
+Elaborating module <AND2>.
+
+Elaborating module <INV>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <distance_module>.
+    Related source file is "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf".
+    Set property "HU_SET = H_CNT_5" for instance <H_CNT>.
+    Set property "HU_SET = H_SHIFT_1" for instance <H_SHIFT>.
+    Set property "HU_SET = L_CNT_4" for instance <L_CNT>.
+    Set property "HU_SET = L_SHIFT_0" for instance <L_SHIFT>.
+    Set property "HU_SET = XLXI_6_2" for instance <XLXI_6>.
+    Set property "HU_SET = XLXI_7_3" for instance <XLXI_7>.
+INFO:Xst:3210 - "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf" line 186: Output port <CEO> of the instance <H_CNT> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf" line 186: Output port <TC> of the instance <H_CNT> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf" line 199: Output port <TC> of the instance <L_CNT> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <distance_module> synthesized.
+
+Synthesizing Unit <CB8CE_HXILINX_distance_module>.
+    Related source file is "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf".
+    Found 8-bit register for signal <Q>.
+    Found 8-bit adder for signal <Q[7]_GND_2_o_add_0_OUT> created at line 131.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   8 D-type flip-flop(s).
+Unit <CB8CE_HXILINX_distance_module> synthesized.
+
+Synthesizing Unit <SR8CE_HXILINX_distance_module>.
+    Related source file is "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf".
+    Found 8-bit register for signal <Q>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <SR8CE_HXILINX_distance_module> synthesized.
+
+Synthesizing Unit <CB16CE_HXILINX_distance_module>.
+    Related source file is "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf".
+    Found 16-bit register for signal <Q>.
+    Found 16-bit adder for signal <Q[15]_GND_4_o_add_0_OUT> created at line 55.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+Unit <CB16CE_HXILINX_distance_module> synthesized.
+
+Synthesizing Unit <SR16CE_HXILINX_distance_module>.
+    Related source file is "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf".
+    Found 16-bit register for signal <Q>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <SR16CE_HXILINX_distance_module> synthesized.
+
+Synthesizing Unit <COMP16_HXILINX_distance_module>.
+    Related source file is "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf".
+    Found 16-bit comparator equal for signal <EQ> created at line 148
+    Summary:
+	inferred   1 Comparator(s).
+Unit <COMP16_HXILINX_distance_module> synthesized.
+
+Synthesizing Unit <COMP8_HXILINX_distance_module>.
+    Related source file is "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.vf".
+    Found 8-bit comparator equal for signal <EQ> created at line 31
+    Summary:
+	inferred   1 Comparator(s).
+Unit <COMP8_HXILINX_distance_module> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 16-bit adder                                          : 1
+ 8-bit adder                                           : 1
+# Registers                                            : 4
+ 16-bit register                                       : 2
+ 8-bit register                                        : 2
+# Comparators                                          : 2
+ 16-bit comparator equal                               : 1
+ 8-bit comparator equal                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <CB16CE_HXILINX_distance_module>.
+The following registers are absorbed into counter <Q>: 1 register on signal <Q>.
+Unit <CB16CE_HXILINX_distance_module> synthesized (advanced).
+
+Synthesizing (advanced) Unit <CB8CE_HXILINX_distance_module>.
+The following registers are absorbed into counter <Q>: 1 register on signal <Q>.
+Unit <CB8CE_HXILINX_distance_module> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 16-bit up counter                                     : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 24
+ Flip-Flops                                            : 24
+# Comparators                                          : 2
+ 16-bit comparator equal                               : 1
+ 8-bit comparator equal                                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <distance_module> ...
+
+Optimizing unit <SR8CE_HXILINX_distance_module> ...
+
+Optimizing unit <SR16CE_HXILINX_distance_module> ...
+
+Optimizing unit <COMP16_HXILINX_distance_module> ...
+
+Optimizing unit <CB8CE_HXILINX_distance_module> ...
+
+Optimizing unit <CB16CE_HXILINX_distance_module> ...
+
+Optimizing unit <COMP8_HXILINX_distance_module> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block distance_module, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 48
+ Flip-Flops                                            : 48
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : distance_module.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 98
+#      AND2                        : 3
+#      GND                         : 3
+#      INV                         : 3
+#      LUT1                        : 21
+#      LUT2                        : 2
+#      LUT6                        : 11
+#      MUXCY                       : 28
+#      VCC                         : 3
+#      XORCY                       : 24
+# FlipFlops/Latches                : 48
+#      FDCE                        : 48
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 8
+#      IBUF                        : 6
+#      OBUF                        : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              48  out of  11440     0%  
+ Number of Slice LUTs:                   37  out of   5720     0%  
+    Number used as Logic:                37  out of   5720     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     85
+   Number with an unused Flip Flop:      37  out of     85    43%  
+   Number with an unused LUT:            48  out of     85    56%  
+   Number of fully used LUT-FF pairs:     0  out of     85     0%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    102     8%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+MAIN_TICK                          | IBUF+BUFG              | 24    |
+SET_CLK                            | BUFGP                  | 24    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 8.256ns (Maximum Frequency: 121.127MHz)
+   Minimum input arrival time before clock: 4.725ns
+   Maximum output required time after clock: 9.183ns
+   Maximum combinational path delay: 5.519ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'MAIN_TICK'
+  Clock period: 8.256ns (frequency: 121.127MHz)
+  Total number of paths / destination ports: 876 / 48
+-------------------------------------------------------------------------
+Delay:               8.256ns (Levels of Logic = 9)
+  Source:            H_CNT/Q_2 (FF)
+  Destination:       H_CNT/Q_0 (FF)
+  Source Clock:      MAIN_TICK rising
+  Destination Clock: MAIN_TICK rising
+
+  Data Path: H_CNT/Q_2 to H_CNT/Q_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.447   0.845  Q_2 (Q_2)
+     end scope: 'H_CNT:Q<2>'
+     begin scope: 'XLXI_7:B<2>'
+     LUT6:I3->O            1   0.205   0.684  EQ82 (EQ81)
+     LUT6:I4->O            1   0.203   0.924  EQ83 (EQ)
+     end scope: 'XLXI_7:EQ'
+     AND2:I1->O            2   0.223   0.616  XLXI_12 (DIST_END_OBUF)
+     INV:I->O              2   0.568   0.961  XLXI_16 (XLXN_20)
+     AND2:I1->O           17   0.223   1.028  XLXI_15 (XLXN_22)
+     begin scope: 'L_CNT:CE'
+     LUT2:I1->O            8   0.205   0.802  CEO1 (CEO)
+     end scope: 'L_CNT:CEO'
+     begin scope: 'H_CNT:CE'
+     FDCE:CE                   0.322          Q_0
+    ----------------------------------------
+    Total                      8.256ns (2.396ns logic, 5.860ns route)
+                                       (29.0% logic, 71.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'SET_CLK'
+  Clock period: 1.165ns (frequency: 858.185MHz)
+  Total number of paths / destination ports: 23 / 23
+-------------------------------------------------------------------------
+Delay:               1.165ns (Levels of Logic = 1)
+  Source:            L_SHIFT/Q_15 (FF)
+  Destination:       H_SHIFT/Q_0 (FF)
+  Source Clock:      SET_CLK rising
+  Destination Clock: SET_CLK rising
+
+  Data Path: L_SHIFT/Q_15 to H_SHIFT/Q_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.447   0.616  Q_15 (Q_15)
+     end scope: 'L_SHIFT:Q<15>'
+     begin scope: 'H_SHIFT:SLI'
+     FDCE:D                    0.102          Q_0
+    ----------------------------------------
+    Total                      1.165ns (0.549ns logic, 0.616ns route)
+                                       (47.1% logic, 52.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'MAIN_TICK'
+  Total number of paths / destination ports: 48 / 48
+-------------------------------------------------------------------------
+Offset:              4.725ns (Levels of Logic = 5)
+  Source:            COUNT_EN (PAD)
+  Destination:       H_CNT/Q_0 (FF)
+  Destination Clock: MAIN_TICK rising
+
+  Data Path: COUNT_EN to H_CNT/Q_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.944  COUNT_EN_IBUF (COUNT_EN_IBUF)
+     AND2:I0->O           17   0.203   1.028  XLXI_15 (XLXN_22)
+     begin scope: 'L_CNT:CE'
+     LUT2:I1->O            8   0.205   0.802  CEO1 (CEO)
+     end scope: 'L_CNT:CEO'
+     begin scope: 'H_CNT:CE'
+     FDCE:CE                   0.322          Q_0
+    ----------------------------------------
+    Total                      4.725ns (1.952ns logic, 2.773ns route)
+                                       (41.3% logic, 58.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'SET_CLK'
+  Total number of paths / destination ports: 49 / 49
+-------------------------------------------------------------------------
+Offset:              2.824ns (Levels of Logic = 2)
+  Source:            SET_CLR (PAD)
+  Destination:       H_SHIFT/Q_0 (FF)
+  Destination Clock: SET_CLK rising
+
+  Data Path: SET_CLR to H_SHIFT/Q_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            24   1.222   1.172  SET_CLR_IBUF (SET_CLR_IBUF)
+     begin scope: 'H_SHIFT:CLR'
+     FDCE:CLR                  0.430          Q_0
+    ----------------------------------------
+    Total                      2.824ns (1.652ns logic, 1.172ns route)
+                                       (58.5% logic, 41.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'MAIN_TICK'
+  Total number of paths / destination ports: 48 / 2
+-------------------------------------------------------------------------
+Offset:              9.049ns (Levels of Logic = 8)
+  Source:            H_CNT/Q_2 (FF)
+  Destination:       MAIN_TICK_O (PAD)
+  Source Clock:      MAIN_TICK rising
+
+  Data Path: H_CNT/Q_2 to MAIN_TICK_O
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.447   0.845  Q_2 (Q_2)
+     end scope: 'H_CNT:Q<2>'
+     begin scope: 'XLXI_7:B<2>'
+     LUT6:I3->O            1   0.205   0.684  EQ82 (EQ81)
+     LUT6:I4->O            1   0.203   0.924  EQ83 (EQ)
+     end scope: 'XLXI_7:EQ'
+     AND2:I1->O            2   0.223   0.616  XLXI_12 (DIST_END_OBUF)
+     INV:I->O              2   0.568   0.961  XLXI_16 (XLXN_20)
+     AND2:I1->O            1   0.223   0.579  XLXI_18 (MAIN_TICK_O_OBUF)
+     OBUF:I->O                 2.571          MAIN_TICK_O_OBUF (MAIN_TICK_O)
+    ----------------------------------------
+    Total                      9.049ns (4.440ns logic, 4.609ns route)
+                                       (49.1% logic, 50.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'SET_CLK'
+  Total number of paths / destination ports: 48 / 2
+-------------------------------------------------------------------------
+Offset:              9.183ns (Levels of Logic = 8)
+  Source:            H_SHIFT/Q_2 (FF)
+  Destination:       MAIN_TICK_O (PAD)
+  Source Clock:      SET_CLK rising
+
+  Data Path: H_SHIFT/Q_2 to MAIN_TICK_O
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.447   0.981  Q_2 (Q_2)
+     end scope: 'H_SHIFT:Q<2>'
+     begin scope: 'XLXI_7:A<2>'
+     LUT6:I0->O            1   0.203   0.684  EQ82 (EQ81)
+     LUT6:I4->O            1   0.203   0.924  EQ83 (EQ)
+     end scope: 'XLXI_7:EQ'
+     AND2:I1->O            2   0.223   0.616  XLXI_12 (DIST_END_OBUF)
+     INV:I->O              2   0.568   0.961  XLXI_16 (XLXN_20)
+     AND2:I1->O            1   0.223   0.579  XLXI_18 (MAIN_TICK_O_OBUF)
+     OBUF:I->O                 2.571          MAIN_TICK_O_OBUF (MAIN_TICK_O)
+    ----------------------------------------
+    Total                      9.183ns (4.438ns logic, 4.745ns route)
+                                       (48.3% logic, 51.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               5.519ns (Levels of Logic = 3)
+  Source:            MAIN_TICK (PAD)
+  Destination:       MAIN_TICK_O (PAD)
+
+  Data Path: MAIN_TICK to MAIN_TICK_O
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.944  MAIN_TICK_IBUF (MAIN_TICK_IBUF)
+     AND2:I0->O            1   0.203   0.579  XLXI_18 (MAIN_TICK_O_OBUF)
+     OBUF:I->O                 2.571          MAIN_TICK_O_OBUF (MAIN_TICK_O)
+    ----------------------------------------
+    Total                      5.519ns (3.996ns logic, 1.523ns route)
+                                       (72.4% logic, 27.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock MAIN_TICK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+MAIN_TICK      |    8.256|         |         |         |
+SET_CLK        |    8.390|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock SET_CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+SET_CLK        |    1.165|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.84 secs
+ 
+--> 
+
+
+Total memory usage is 387112 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

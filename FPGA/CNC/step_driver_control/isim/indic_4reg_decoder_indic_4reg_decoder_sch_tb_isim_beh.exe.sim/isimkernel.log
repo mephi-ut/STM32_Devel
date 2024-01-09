@@ -1,0 +1,29 @@
+Command line:
+   indic_4reg_decoder_indic_4reg_decoder_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  55003
+
+Tue Jul 24 04:11:28 2018
+
+
+ Elaboration Time: 0.01 sec
+
+ Current Memory Usage: 248.267 Meg
+
+ Total Signals          : 861
+ Total Nets             : 306
+ Total Signal Drivers   : 273
+ Total Blocks           : 147
+ Total Primitive Blocks : 141
+ Total Processes        : 282
+ Total Traceable Variables  : 66
+ Total Scalar Nets and Variables : 929
+Total Line Count : 181
+
+ Total Simulation Time: 0.08 sec
+
+ Current Memory Usage: 323.768 Meg
+
+Tue Jul 24 04:13:30 2018
+

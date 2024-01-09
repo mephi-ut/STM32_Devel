@@ -1,0 +1,211 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : sdc.vf
+// /___/   /\     Timestamp : 07/19/2018 20:26:28
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch
+//Design Name: sdc
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module CB4CLED_HXILINX_sdc(CEO, Q0, Q1, Q2, Q3, TC, C, CE, CLR, D0, D1, D2, D3, L, UP);
+
+   parameter TERMINAL_COUNT_UP = 4'b1111;
+   parameter TERMINAL_COUNT_DOWN = 4'b0000;
+   
+   output             CEO;
+   output             Q0;
+   output             Q1;
+   output             Q2;
+   output             Q3;
+   output             TC;
+   
+   input 	      C;
+   input 	      CE;
+   input 	      CLR;
+   input              D0;
+   input              D1;
+   input              D2;
+   input              D3;
+   input 	      L;	
+   input 	      UP;	
+   
+   reg                Q0;
+   reg                Q1;
+   reg                Q2;
+   reg                Q3;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q3, Q2, Q1, Q0} <= 4'b0000;
+	else if (L)
+	  {Q3, Q2, Q1, Q0} <= {D3, D2, D1, D0};
+	else if (CE)
+	  begin
+	     if (UP)
+	       {Q3, Q2, Q1, Q0} <= {Q3, Q2, Q1, Q0} + 1;
+	     else if (!UP)
+	       {Q3, Q2, Q1, Q0} <= {Q3, Q2, Q1, Q0} - 1;
+	  end
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = CLR ? 1'b0 : ( ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT_UP && UP) || ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT_DOWN && !UP) );
+   
+endmodule
+`timescale  100 ps / 10 ps
+
+module M2_1_HXILINX_sdc (O, D0, D1, S0);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  S0;
+
+   reg O;
+
+   always @ ( D0 or D1 or S0)
+   begin
+      case(S0)
+      1'b0 : O <= D0;
+      1'b1 : O <= D1;
+      endcase
+   end
+    
+endmodule
+`timescale 1ns / 1ps
+
+module sdc(ENBL, 
+           IS_UP, 
+           L_INIT, 
+           MAIN_TICK, 
+           RST, 
+           A1, 
+           A2, 
+           B1, 
+           B2);
+
+    input ENBL;
+    input IS_UP;
+    input L_INIT;
+    input MAIN_TICK;
+    input RST;
+   output A1;
+   output A2;
+   output B1;
+   output B2;
+   
+   wire load;
+   wire XLXN_187;
+   wire XLXN_195;
+   wire XLXN_202;
+   wire XLXN_208;
+   wire XLXN_209;
+   wire XLXN_214;
+   wire XLXN_215;
+   wire XLXN_216;
+   wire XLXN_312;
+   wire XLXN_315;
+   wire XLXN_316;
+   wire XLXN_320;
+   wire XLXN_322;
+   wire XLXN_327;
+   wire XLXN_336;
+   wire XLXN_378;
+   wire XLXN_380;
+   wire XLXN_389;
+   wire XLXN_391;
+   wire XLXN_394;
+   
+   assign XLXN_315 = 0;
+   assign XLXN_316 = 1;
+   INV  INV_3 (.I(XLXN_214), 
+              .O(XLXN_202));
+   AND2  LOW (.I0(XLXN_394), 
+             .I1(XLXN_327), 
+             .O(XLXN_336));
+   NAND2  NAND_2_1 (.I0(XLXN_215), 
+                   .I1(XLXN_216), 
+                   .O(XLXN_187));
+   NOR2  NOR_2_1 (.I0(XLXN_216), 
+                 .I1(XLXN_215), 
+                 .O(XLXN_195));
+   (* HU_SET = "XLXI_1_0" *) 
+   CB4CLED_HXILINX_sdc  XLXI_1 (.C(MAIN_TICK), 
+                               .CE(XLXN_322), 
+                               .CLR(XLXN_389), 
+                               .D0(XLXN_312), 
+                               .D1(XLXN_312), 
+                               .D2(XLXN_312), 
+                               .D3(XLXN_312), 
+                               .L(load), 
+                               .UP(IS_UP), 
+                               .CEO(), 
+                               .Q0(XLXN_216), 
+                               .Q1(XLXN_215), 
+                               .Q2(XLXN_214), 
+                               .Q3(XLXN_394), 
+                               .TC());
+   AND2  XLXI_92 (.I0(XLXN_202), 
+                 .I1(XLXN_187), 
+                 .O(A1));
+   AND2  XLXI_93 (.I0(XLXN_214), 
+                 .I1(XLXN_187), 
+                 .O(A2));
+   AND2  XLXI_94 (.I0(XLXN_215), 
+                 .I1(XLXN_214), 
+                 .O(XLXN_378));
+   OR2  XLXI_95 (.I0(XLXN_380), 
+                .I1(XLXN_378), 
+                .O(B1));
+   AND2  XLXI_97 (.I0(XLXN_195), 
+                 .I1(XLXN_202), 
+                 .O(XLXN_380));
+   AND2  XLXI_98 (.I0(XLXN_215), 
+                 .I1(XLXN_202), 
+                 .O(XLXN_208));
+   OR2  XLXI_99 (.I0(XLXN_209), 
+                .I1(XLXN_208), 
+                .O(B2));
+   AND2  XLXI_100 (.I0(XLXN_195), 
+                  .I1(XLXN_214), 
+                  .O(XLXN_209));
+   (* HU_SET = "XLXI_128_1" *) 
+   M2_1_HXILINX_sdc  XLXI_128 (.D0(XLXN_336), 
+                              .D1(XLXN_315), 
+                              .S0(L_INIT), 
+                              .O(XLXN_312));
+   (* HU_SET = "XLXI_129_2" *) 
+   M2_1_HXILINX_sdc  XLXI_129 (.D0(XLXN_315), 
+                              .D1(XLXN_316), 
+                              .S0(L_INIT), 
+                              .O(load));
+   AND2  XLXI_131 (.I0(ENBL), 
+                  .I1(XLXN_320), 
+                  .O(XLXN_322));
+   INV  XLXI_132 (.I(load), 
+                 .O(XLXN_320));
+   INV  XLXI_135 (.I(IS_UP), 
+                 .O(XLXN_327));
+   OR2  XLXI_169 (.I0(RST), 
+                 .I1(XLXN_391), 
+                 .O(XLXN_389));
+   AND2  XLXI_170 (.I0(XLXN_394), 
+                  .I1(IS_UP), 
+                  .O(XLXN_391));
+endmodule

@@ -1,0 +1,15 @@
+[submodule "TOOLS/rmui"]
+	path = TOOLS/rmui
+	url = https://devel.mephi.ru/dyokunev/rmui
+[submodule "SOFT/CardLogger/Drivers/wiznet"]
+	path = SOFT/CardLogger/Drivers/wiznet
+	url = https://github.com/Wiznet/ioLibrary_Driver
+[submodule "SOFT/CardLogger/Drivers/enc28j60"]
+	path = SOFT/CardLogger/Drivers/enc28j60
+	url = https://github.com/xaionaro/stm32-enc28j60
+[submodule "TOOLS/CubeMX2Makefile"]
+	path = TOOLS/CubeMX2Makefile
+	url = https://github.com/baoshi/CubeMX2Makefile
+[submodule "TOOLS/stlink"]
+	path = TOOLS/stlink
+	url = https://github.com/texane/stlink

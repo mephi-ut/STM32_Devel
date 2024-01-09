@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/trurl/Develop/STM32_Devel/FPGA/Polish/Scheme_Scheme_sch_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="scheme_scheme_sch_tb" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/scheme_scheme_sch_tb/iclk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">iclk</obj_property>
+      <obj_property name="ObjectShortName">iclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scheme_scheme_sch_tb/ogt" type="logic" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">ogt</obj_property>
+      <obj_property name="ObjectShortName">ogt</obj_property>
+      <obj_property name="label">ogt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scheme_scheme_sch_tb/olt" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">olt</obj_property>
+      <obj_property name="ObjectShortName">olt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scheme_scheme_sch_tb/incr" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">incr</obj_property>
+      <obj_property name="ObjectShortName">incr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scheme_scheme_sch_tb/decr" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">decr</obj_property>
+      <obj_property name="ObjectShortName">decr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scheme_scheme_sch_tb/incf" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">incf</obj_property>
+      <obj_property name="ObjectShortName">incf</obj_property>
+   </wvobject>
+   <wvobject fp_name="/scheme_scheme_sch_tb/decf" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">decf</obj_property>
+      <obj_property name="ObjectShortName">decf</obj_property>
+   </wvobject>
+</wave_config>

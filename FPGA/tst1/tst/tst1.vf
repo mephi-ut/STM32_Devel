@@ -1,0 +1,107 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : tst1.vf
+// /___/   /\     Timestamp : 07/18/2018 01:21:30
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog /home/lusius/Devel/STM32_Devel/FPGA/tst1/tst/tst1.vf -w /home/lusius/Devel/STM32_Devel/FPGA/tst1/tst/tst1.sch
+//Design Name: tst1
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module CB4CLED_HXILINX_tst1(CEO, Q0, Q1, Q2, Q3, TC, C, CE, CLR, D0, D1, D2, D3, L, UP);
+
+   parameter TERMINAL_COUNT_UP = 4'b1111;
+   parameter TERMINAL_COUNT_DOWN = 4'b0000;
+   
+   output             CEO;
+   output             Q0;
+   output             Q1;
+   output             Q2;
+   output             Q3;
+   output             TC;
+   
+   input 	      C;
+   input 	      CE;
+   input 	      CLR;
+   input              D0;
+   input              D1;
+   input              D2;
+   input              D3;
+   input 	      L;	
+   input 	      UP;	
+   
+   reg                Q0;
+   reg                Q1;
+   reg                Q2;
+   reg                Q3;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q3, Q2, Q1, Q0} <= 4'b0000;
+	else if (L)
+	  {Q3, Q2, Q1, Q0} <= {D3, D2, D1, D0};
+	else if (CE)
+	  begin
+	     if (UP)
+	       {Q3, Q2, Q1, Q0} <= {Q3, Q2, Q1, Q0} + 1;
+	     else if (!UP)
+	       {Q3, Q2, Q1, Q0} <= {Q3, Q2, Q1, Q0} - 1;
+	  end
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = CLR ? 1'b0 : ( ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT_UP && UP) || ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT_DOWN && !UP) );
+   
+endmodule
+`timescale 1ns / 1ps
+
+module tst1(clk, 
+            enable, 
+            load, 
+            up, 
+            XLXN_10, 
+            XLXN_11, 
+            XLXN_12);
+
+    input clk;
+    input enable;
+    input load;
+    input up;
+   output XLXN_10;
+   output XLXN_11;
+   output XLXN_12;
+   
+   wire clr;
+   wire XLXN_2;
+   
+   (* HU_SET = "XLXI_1_0" *) 
+   CB4CLED_HXILINX_tst1  XLXI_1 (.C(clk), 
+                                .CE(enable), 
+                                .CLR(clr), 
+                                .D0(XLXN_2), 
+                                .D1(XLXN_2), 
+                                .D2(XLXN_2), 
+                                .D3(XLXN_2), 
+                                .L(load), 
+                                .UP(up), 
+                                .CEO(), 
+                                .Q0(XLXN_10), 
+                                .Q1(XLXN_11), 
+                                .Q2(XLXN_12), 
+                                .Q3(clr), 
+                                .TC());
+   PULLDOWN  XLXI_2 (.O(XLXN_2));
+endmodule

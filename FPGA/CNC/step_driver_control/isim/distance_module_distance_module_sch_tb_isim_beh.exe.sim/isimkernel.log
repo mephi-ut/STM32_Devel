@@ -1,0 +1,29 @@
+Command line:
+   distance_module_distance_module_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  37207
+
+Fri Jul 27 23:37:49 2018
+
+
+ Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 246.907 Meg
+
+ Total Signals          : 121
+ Total Nets             : 126
+ Total Signal Drivers   : 42
+ Total Blocks           : 21
+ Total Primitive Blocks : 19
+ Total Processes        : 43
+ Total Traceable Variables  : 42
+ Total Scalar Nets and Variables : 780
+Total Line Count : 90
+
+ Total Simulation Time: 0.03 sec
+
+ Current Memory Usage: 322.408 Meg
+
+Fri Jul 27 23:41:34 2018
+

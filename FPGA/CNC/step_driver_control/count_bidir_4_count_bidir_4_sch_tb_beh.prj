@@ -1,0 +1,5 @@
+verilog work "count_bidir_4.vf"
+vhdl work "count_bench.vhd"
+verilog work "count_test.vf"
+verilog work "input_schheme.vf"
+verilog work "/srv/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

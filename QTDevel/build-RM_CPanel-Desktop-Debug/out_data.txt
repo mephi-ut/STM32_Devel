@@ -1,0 +1,6 @@
+A - Sensor position 
+B - POTENCIAL
+C - Force delta
+D - FORCE
+
+A	B	C	D

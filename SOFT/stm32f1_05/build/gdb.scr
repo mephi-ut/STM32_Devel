@@ -1,0 +1,6 @@
+tar ext :4242
+load
+c
+print Buffer1
+print Buffer2
+

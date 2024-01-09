@@ -1,0 +1,31 @@
+Running: /home/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/trurl/Develop/STM32_Devel/FPGA/Polish/Scheme_Scheme_sch_tb_isim_beh.exe -prj /home/trurl/Develop/STM32_Devel/FPGA/Polish/Scheme_Scheme_sch_tb_beh.prj work.Scheme_Scheme_sch_tb 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/trurl/Develop/STM32_Devel/FPGA/Polish/../Modules/C8_BD_C.vhd" into library work
+Parsing VHDL file "/home/trurl/Develop/STM32_Devel/FPGA/Polish/Scheme.vhf" into library work
+Parsing VHDL file "/home/trurl/Develop/STM32_Devel/FPGA/Polish/../Modules/test.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 113704 KB
+Fuse CPU Usage: 1050 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package vcomponents
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture compm8_hxilinx_scheme_v of entity COMPM8_HXILINX_Scheme [compm8_hxilinx_scheme_default]
+Compiling architecture behavioral of entity CB8CE_HXILINX_Scheme [cb8ce_hxilinx_scheme_default]
+Compiling architecture comp8_hxilinx_scheme_v of entity COMP8_HXILINX_Scheme [comp8_hxilinx_scheme_default]
+Compiling architecture behavioral of entity C8_BD_C [c8_bd_c_default]
+Compiling architecture behavioral of entity Scheme [scheme_default]
+Compiling architecture behavioral of entity scheme_scheme_sch_tb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 17 VHDL Units
+Built simulation executable /home/trurl/Develop/STM32_Devel/FPGA/Polish/Scheme_Scheme_sch_tb_isim_beh.exe
+Fuse Memory Usage: 690824 KB
+Fuse CPU Usage: 1150 ms
+GCC CPU Usage: 210 ms

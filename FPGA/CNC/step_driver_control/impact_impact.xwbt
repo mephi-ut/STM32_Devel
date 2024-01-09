@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/impact.xsl
+OUTFILE=/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/impact.xsl
+FAMILY=None
+PART=None
+WORKINGDIR=/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control
+LICENSE=iMPACT
+USER_INFO=iMPACT

@@ -1,0 +1,9 @@
+MODULE Setter
+	SUBMODULE i7led_decoder
+		INSTANCE XLXI_1
+	SUBMODULE i7led_decoder
+		INSTANCE XLXI_6
+	SUBMODULE i7led_decoder
+		INSTANCE XLXI_7
+	SUBMODULE i7led_decoder
+		INSTANCE XLXI_9

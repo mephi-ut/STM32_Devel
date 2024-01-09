@@ -1,0 +1,8 @@
+NET "up" LOC="p45";
+NET "enbl" LOC="p46";
+NET "clock" LOC="p21";
+NET "clear" LOC="p22";
+NET "A1" LOC="p10";
+NET "A2" LOC="p11";
+NET "B1" LOC="p12";
+NET "B2" LOC="p15";

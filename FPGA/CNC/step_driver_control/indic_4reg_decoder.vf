@@ -1,0 +1,495 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : indic_4reg_decoder.vf
+// /___/   /\     Timestamp : 07/24/2018 04:04:34
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/indic_4reg_decoder.vf -w /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/indic_4reg_decoder.sch
+//Design Name: indic_4reg_decoder
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module CB4CLED_HXILINX_indic_4reg_decoder(CEO, Q0, Q1, Q2, Q3, TC, C, CE, CLR, D0, D1, D2, D3, L, UP);
+
+   parameter TERMINAL_COUNT_UP = 4'b1111;
+   parameter TERMINAL_COUNT_DOWN = 4'b0000;
+   
+   output             CEO;
+   output             Q0;
+   output             Q1;
+   output             Q2;
+   output             Q3;
+   output             TC;
+   
+   input 	      C;
+   input 	      CE;
+   input 	      CLR;
+   input              D0;
+   input              D1;
+   input              D2;
+   input              D3;
+   input 	      L;	
+   input 	      UP;	
+   
+   reg                Q0;
+   reg                Q1;
+   reg                Q2;
+   reg                Q3;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q3, Q2, Q1, Q0} <= 4'b0000;
+	else if (L)
+	  {Q3, Q2, Q1, Q0} <= {D3, D2, D1, D0};
+	else if (CE)
+	  begin
+	     if (UP)
+	       {Q3, Q2, Q1, Q0} <= {Q3, Q2, Q1, Q0} + 1;
+	     else if (!UP)
+	       {Q3, Q2, Q1, Q0} <= {Q3, Q2, Q1, Q0} - 1;
+	  end
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = CLR ? 1'b0 : ( ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT_UP && UP) || ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT_DOWN && !UP) );
+   
+endmodule
+`timescale  100 ps / 10 ps
+
+module M4_1E_HXILINX_indic_4reg_decoder (O, D0, D1, D2, D3, E, S0, S1);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  D2;
+   input  D3;
+   input  E;
+   input  S0;
+   input  S1;
+
+   reg O;
+
+   always @ ( D0 or D1 or D2 or D3 or E or S0 or S1)
+   begin
+      if(!E)
+      O <= 1'b0;
+      else 
+      begin
+        case({S1,S0})
+        2'b00 : O <= D0;
+        2'b01 : O <= D1;
+        2'b10 : O <= D2;
+        2'b11 : O <= D3;
+        endcase
+      end
+   end
+    
+endmodule
+`timescale 100 ps / 10 ps
+
+module CB2CE_HXILINX_indic_4reg_decoder(CEO, Q0, Q1, TC, C, CE, CLR);
+   
+   localparam TERMINAL_COUNT = 2'b11;
+   
+   output             CEO;
+   output             Q0;
+   output             Q1;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg                Q0;
+   reg                Q1;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q1, Q0} <= 2'b00;
+	else if (CE)
+	  {Q1,Q0} <= {Q1,Q0} + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = ({Q1,Q0} == TERMINAL_COUNT);
+   
+endmodule
+`timescale 1ns / 1ps
+
+module i7led_decoder_MUSER_indic_4reg_decoder(COUNT, 
+                                              COUNT_EN, 
+                                              DIR, 
+                                              RST, 
+                                              CE_O, 
+                                              SEG_A, 
+                                              SEG_B, 
+                                              SEG_C, 
+                                              SEG_D, 
+                                              SEG_E, 
+                                              SEG_F, 
+                                              SEG_G);
+
+    input COUNT;
+    input COUNT_EN;
+    input DIR;
+    input RST;
+   output CE_O;
+   output SEG_A;
+   output SEG_B;
+   output SEG_C;
+   output SEG_D;
+   output SEG_E;
+   output SEG_F;
+   output SEG_G;
+   
+   wire XLXN_359;
+   wire XLXN_372;
+   wire XLXN_373;
+   wire XLXN_374;
+   wire XLXN_375;
+   wire XLXN_377;
+   wire XLXN_382;
+   wire XLXN_383;
+   wire XLXN_385;
+   wire XLXN_388;
+   wire XLXN_390;
+   wire XLXN_391;
+   wire XLXN_392;
+   wire XLXN_397;
+   wire XLXN_404;
+   wire XLXN_408;
+   wire XLXN_441;
+   wire XLXN_444;
+   wire XLXN_475;
+   wire XLXN_476;
+   wire XLXN_555;
+   wire XLXN_556;
+   wire XLXN_560;
+   wire XLXN_565;
+   wire XLXN_574;
+   wire XLXN_575;
+   wire XLXN_576;
+   wire XLXN_577;
+   wire XLXN_578;
+   
+   assign XLXN_441 = 1;
+   assign XLXN_444 = 0;
+   AND2B2  ANDB4B2 (.I0(XLXN_577), 
+                   .I1(XLXN_574), 
+                   .O(XLXN_391));
+   AND2B2  ANDB4B3 (.I0(XLXN_574), 
+                   .I1(XLXN_576), 
+                   .O(XLXN_397));
+   AND2B1  ANDB43 (.I0(XLXN_574), 
+                  .I1(XLXN_576), 
+                  .O(XLXN_373));
+   AND2B1  AND1B2 (.I0(XLXN_577), 
+                  .I1(XLXN_575), 
+                  .O(XLXN_359));
+   AND2B1  AND2B1_ (.I0(XLXN_575), 
+                   .I1(XLXN_577), 
+                   .O(XLXN_475));
+   (* HU_SET = "COUNTER_0" *) 
+   CB4CLED_HXILINX_indic_4reg_decoder  COUNTER (.C(COUNT), 
+                                               .CE(COUNT_EN), 
+                                               .CLR(XLXN_560), 
+                                               .D0(XLXN_441), 
+                                               .D1(XLXN_444), 
+                                               .D2(XLXN_444), 
+                                               .D3(XLXN_441), 
+                                               .L(XLXN_578), 
+                                               .UP(DIR), 
+                                               .CEO(), 
+                                               .Q0(XLXN_575), 
+                                               .Q1(XLXN_577), 
+                                               .Q2(XLXN_576), 
+                                               .Q3(XLXN_574), 
+                                               .TC());
+   AND2  XLXI_152 (.I0(XLXN_397), 
+                  .I1(XLXN_359), 
+                  .O(XLXN_375));
+   AND2  XLXI_159 (.I0(XLXN_373), 
+                  .I1(XLXN_372), 
+                  .O(XLXN_374));
+   NOR2  XLXI_160 (.I0(XLXN_375), 
+                  .I1(XLXN_374), 
+                  .O(SEG_A));
+   AND2B1  XLXI_162 (.I0(XLXN_575), 
+                    .I1(XLXN_377), 
+                    .O(XLXN_383));
+   AND2  XLXI_165 (.I0(XLXN_475), 
+                  .I1(XLXN_397), 
+                  .O(XLXN_382));
+   OR2  XLXI_166 (.I0(XLXN_383), 
+                 .I1(XLXN_382), 
+                 .O(SEG_B));
+   OR2  XLXI_167 (.I0(XLXN_575), 
+                 .I1(XLXN_577), 
+                 .O(XLXN_385));
+   AND2  XLXI_168 (.I0(XLXN_385), 
+                  .I1(XLXN_397), 
+                  .O(XLXN_390));
+   AND3  XLXI_169 (.I0(XLXN_575), 
+                  .I1(XLXN_577), 
+                  .I2(XLXN_576), 
+                  .O(XLXN_388));
+   NOR2  XLXI_170 (.I0(XLXN_388), 
+                  .I1(XLXN_390), 
+                  .O(SEG_C));
+   XOR2  XLXI_172 (.I0(XLXN_575), 
+                  .I1(XLXN_576), 
+                  .O(XLXN_392));
+   NAND2  XLXI_173 (.I0(XLXN_392), 
+                   .I1(XLXN_391), 
+                   .O(SEG_D));
+   XOR2  XLXI_174 (.I0(XLXN_577), 
+                  .I1(XLXN_575), 
+                  .O(XLXN_476));
+   NAND2  XLXI_175 (.I0(XLXN_476), 
+                   .I1(XLXN_373), 
+                   .O(SEG_E));
+   NAND2  XLXI_176 (.I0(XLXN_475), 
+                   .I1(XLXN_397), 
+                   .O(SEG_F));
+   AND3B3  XLXI_178 (.I0(XLXN_577), 
+                    .I1(XLXN_576), 
+                    .I2(XLXN_574), 
+                    .O(XLXN_408));
+   AND3  XLXI_179 (.I0(XLXN_575), 
+                  .I1(XLXN_577), 
+                  .I2(XLXN_576), 
+                  .O(XLXN_404));
+   NOR2  XLXI_180 (.I0(XLXN_404), 
+                  .I1(XLXN_408), 
+                  .O(SEG_G));
+   AND5B2  XLXI_216 (.I0(XLXN_577), 
+                    .I1(XLXN_576), 
+                    .I2(DIR), 
+                    .I3(XLXN_574), 
+                    .I4(XLXN_575), 
+                    .O(XLXN_556));
+   XOR2  XLXI_217 (.I0(XLXN_555), 
+                  .I1(XLXN_556), 
+                  .O(CE_O));
+   AND5B5  XLXI_218 (.I0(DIR), 
+                    .I1(XLXN_574), 
+                    .I2(XLXN_576), 
+                    .I3(XLXN_577), 
+                    .I4(XLXN_575), 
+                    .O(XLXN_555));
+   AND5B2  XLXI_219 (.I0(XLXN_575), 
+                    .I1(XLXN_576), 
+                    .I2(XLXN_577), 
+                    .I3(XLXN_574), 
+                    .I4(DIR), 
+                    .O(XLXN_565));
+   OR2  XLXI_221 (.I0(RST), 
+                 .I1(XLXN_565), 
+                 .O(XLXN_560));
+   AND2B1  XLXI_226 (.I0(DIR), 
+                    .I1(XLXN_555), 
+                    .O(XLXN_578));
+   XNOR2  XNOR21 (.I0(XLXN_577), 
+                 .I1(XLXN_575), 
+                 .O(XLXN_372));
+   XNOR2  XNOR32 (.I0(XLXN_577), 
+                 .I1(XLXN_576), 
+                 .O(XLXN_377));
+endmodule
+`timescale 1ns / 1ps
+
+module indic_4reg_decoder(COUNT, 
+                          COUNT_EN, 
+                          DIRECTION, 
+                          RESET, 
+                          SEG_SWITCH, 
+                          SEG_A, 
+                          SEG_B, 
+                          SEG_C, 
+                          SEG_D, 
+                          SEG_E, 
+                          SEG_F, 
+                          SEG_G);
+
+    input COUNT;
+    input COUNT_EN;
+    input DIRECTION;
+    input RESET;
+    input SEG_SWITCH;
+   output SEG_A;
+   output SEG_B;
+   output SEG_C;
+   output SEG_D;
+   output SEG_E;
+   output SEG_F;
+   output SEG_G;
+   
+   wire XLXN_63;
+   wire XLXN_65;
+   wire XLXN_71;
+   wire XLXN_84;
+   wire XLXN_85;
+   wire XLXN_86;
+   wire XLXN_87;
+   wire XLXN_88;
+   wire XLXN_89;
+   wire XLXN_90;
+   wire XLXN_91;
+   wire XLXN_92;
+   wire XLXN_93;
+   wire XLXN_94;
+   wire XLXN_95;
+   wire XLXN_96;
+   wire XLXN_97;
+   wire XLXN_98;
+   wire XLXN_99;
+   wire XLXN_100;
+   wire XLXN_101;
+   wire XLXN_102;
+   wire XLXN_103;
+   wire XLXN_104;
+   wire XLXN_105;
+   wire XLXN_106;
+   wire XLXN_107;
+   wire XLXN_108;
+   wire XLXN_109;
+   wire XLXN_110;
+   wire XLXN_111;
+   wire XLXN_112;
+   wire XLXN_113;
+   
+   i7led_decoder_MUSER_indic_4reg_decoder  REG_1 (.COUNT(COUNT), 
+                                                 .COUNT_EN(COUNT_EN), 
+                                                 .DIR(DIRECTION), 
+                                                 .RST(RESET), 
+                                                 .CE_O(XLXN_63), 
+                                                 .SEG_A(XLXN_86), 
+                                                 .SEG_B(XLXN_90), 
+                                                 .SEG_C(XLXN_94), 
+                                                 .SEG_D(XLXN_98), 
+                                                 .SEG_E(XLXN_102), 
+                                                 .SEG_F(XLXN_106), 
+                                                 .SEG_G(XLXN_110));
+   i7led_decoder_MUSER_indic_4reg_decoder  REG_2 (.COUNT(COUNT), 
+                                                 .COUNT_EN(XLXN_63), 
+                                                 .DIR(DIRECTION), 
+                                                 .RST(RESET), 
+                                                 .CE_O(XLXN_65), 
+                                                 .SEG_A(XLXN_87), 
+                                                 .SEG_B(XLXN_91), 
+                                                 .SEG_C(XLXN_95), 
+                                                 .SEG_D(XLXN_99), 
+                                                 .SEG_E(XLXN_103), 
+                                                 .SEG_F(XLXN_107), 
+                                                 .SEG_G(XLXN_111));
+   i7led_decoder_MUSER_indic_4reg_decoder  REG_3 (.COUNT(COUNT), 
+                                                 .COUNT_EN(XLXN_65), 
+                                                 .DIR(DIRECTION), 
+                                                 .RST(RESET), 
+                                                 .CE_O(XLXN_71), 
+                                                 .SEG_A(XLXN_88), 
+                                                 .SEG_B(XLXN_92), 
+                                                 .SEG_C(XLXN_96), 
+                                                 .SEG_D(XLXN_100), 
+                                                 .SEG_E(XLXN_104), 
+                                                 .SEG_F(XLXN_108), 
+                                                 .SEG_G(XLXN_112));
+   i7led_decoder_MUSER_indic_4reg_decoder  REG_4 (.COUNT(COUNT), 
+                                                 .COUNT_EN(XLXN_71), 
+                                                 .DIR(DIRECTION), 
+                                                 .RST(RESET), 
+                                                 .CE_O(), 
+                                                 .SEG_A(XLXN_89), 
+                                                 .SEG_B(XLXN_93), 
+                                                 .SEG_C(XLXN_97), 
+                                                 .SEG_D(XLXN_101), 
+                                                 .SEG_E(XLXN_105), 
+                                                 .SEG_F(XLXN_109), 
+                                                 .SEG_G(XLXN_113));
+   (* HU_SET = "XLXI_24_2" *) 
+   M4_1E_HXILINX_indic_4reg_decoder  XLXI_24 (.D0(XLXN_86), 
+                                             .D1(XLXN_87), 
+                                             .D2(XLXN_88), 
+                                             .D3(XLXN_89), 
+                                             .E(COUNT_EN), 
+                                             .S0(XLXN_84), 
+                                             .S1(XLXN_85), 
+                                             .O(SEG_A));
+   (* HU_SET = "XLXI_31_3" *) 
+   M4_1E_HXILINX_indic_4reg_decoder  XLXI_31 (.D0(XLXN_90), 
+                                             .D1(XLXN_91), 
+                                             .D2(XLXN_92), 
+                                             .D3(XLXN_93), 
+                                             .E(COUNT_EN), 
+                                             .S0(XLXN_84), 
+                                             .S1(XLXN_85), 
+                                             .O(SEG_B));
+   (* HU_SET = "XLXI_32_4" *) 
+   M4_1E_HXILINX_indic_4reg_decoder  XLXI_32 (.D0(XLXN_94), 
+                                             .D1(XLXN_95), 
+                                             .D2(XLXN_96), 
+                                             .D3(XLXN_97), 
+                                             .E(COUNT_EN), 
+                                             .S0(XLXN_84), 
+                                             .S1(XLXN_85), 
+                                             .O(SEG_C));
+   (* HU_SET = "XLXI_33_5" *) 
+   M4_1E_HXILINX_indic_4reg_decoder  XLXI_33 (.D0(XLXN_98), 
+                                             .D1(XLXN_99), 
+                                             .D2(XLXN_100), 
+                                             .D3(XLXN_101), 
+                                             .E(COUNT_EN), 
+                                             .S0(XLXN_84), 
+                                             .S1(XLXN_85), 
+                                             .O(SEG_D));
+   (* HU_SET = "XLXI_34_6" *) 
+   M4_1E_HXILINX_indic_4reg_decoder  XLXI_34 (.D0(XLXN_102), 
+                                             .D1(XLXN_103), 
+                                             .D2(XLXN_104), 
+                                             .D3(XLXN_105), 
+                                             .E(COUNT_EN), 
+                                             .S0(XLXN_84), 
+                                             .S1(XLXN_85), 
+                                             .O(SEG_E));
+   (* HU_SET = "XLXI_35_1" *) 
+   M4_1E_HXILINX_indic_4reg_decoder  XLXI_35 (.D0(XLXN_110), 
+                                             .D1(XLXN_111), 
+                                             .D2(XLXN_112), 
+                                             .D3(XLXN_113), 
+                                             .E(COUNT_EN), 
+                                             .S0(XLXN_84), 
+                                             .S1(XLXN_85), 
+                                             .O(SEG_G));
+   (* HU_SET = "XLXI_36_7" *) 
+   M4_1E_HXILINX_indic_4reg_decoder  XLXI_36 (.D0(XLXN_106), 
+                                             .D1(XLXN_107), 
+                                             .D2(XLXN_108), 
+                                             .D3(XLXN_109), 
+                                             .E(COUNT_EN), 
+                                             .S0(XLXN_84), 
+                                             .S1(XLXN_85), 
+                                             .O(SEG_F));
+   (* HU_SET = "XLXI_50_8" *) 
+   CB2CE_HXILINX_indic_4reg_decoder  XLXI_50 (.C(SEG_SWITCH), 
+                                             .CE(COUNT_EN), 
+                                             .CLR(RESET), 
+                                             .CEO(), 
+                                             .Q0(XLXN_84), 
+                                             .Q1(XLXN_85), 
+                                             .TC());
+endmodule

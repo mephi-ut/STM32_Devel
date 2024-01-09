@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family spartan6 -w -refsym indic_4reg_decoder /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/indic_4reg_decoder.sch /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/indic_4reg_decoder.sym 

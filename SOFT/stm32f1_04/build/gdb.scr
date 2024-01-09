@@ -1,0 +1,5 @@
+tar ext :4242
+load
+continue
+print ADC1ConvertedValue
+

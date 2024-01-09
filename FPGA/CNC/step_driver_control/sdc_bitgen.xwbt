@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.ncd
+OUTFILE=/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.bit
+FAMILY=Spartan6
+PART=xc6slx9-3tqg144
+WORKINGDIR=/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control
+LICENSE=WebPack
+USER_INFO=211465926_0_0_471

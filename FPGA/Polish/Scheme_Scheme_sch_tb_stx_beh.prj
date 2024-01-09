@@ -1,0 +1,3 @@
+vhdl isim_temp "../Modules/C8_BD_C.vhd"
+vhdl isim_temp "Scheme.vhf"
+vhdl isim_temp "../Modules/test.vhd"

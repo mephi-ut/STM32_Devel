@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1052.3622"
+   height="744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="Arbor_Grip.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.24748737"
+     inkscape:cx="1876.6938"
+     inkscape:cy="-80.208011"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-nodes="false"
+     units="mm"
+     inkscape:window-width="1854"
+     inkscape:window-height="1104"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       orientation="0,1"
+       position="-5.7142857,177.14286"
+       id="guide3066" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="2521.3408,1420.2745"
+       id="guide3070" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="2058.6909,1998.0817"
+       id="guide3072" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="2271.4286,580"
+       id="guide3074" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="448.50773,1141.4724"
+       id="guide3076" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="1284.914,1214.2034"
+       id="guide3078" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="1800.0918,1335.4217"
+       id="guide3080" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="170.71429,494.64286"
+       id="guide3084" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-147.14286,885.71429"
+       id="guide3086" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="2220,885.71429"
+       id="guide4015" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="1974.2857,410"
+       id="guide4037" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="3335.7143,542.85714"
+       id="guide4079" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="lines"
+     style="display:none"
+     sodipodi:insensitive="true"
+     transform="translate(0,-233.85824)">
+    <image
+       y="5.9583144"
+       x="238.5934"
+       id="image4012"
+       xlink:href="file:///home/trurl/STM32_Devel/Mechanic/Arbor_Grip/Deck.png"
+       height="833.26648"
+       width="3428.1365"
+       transform="matrix(0.99926292,0.03838781,-0.03838781,0.99926292,0,0)" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26988)">
+    <path
+       id="path4059-1-9"
+       style="fill:none;stroke:#000000;stroke-width:6.31417322;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 904.4591,-228.98671 c -60.7142,102.8572 -194.4045,381.3761 -217.2019,641.32384 -22.7974,259.9477 65.298,501.32409 65.298,501.32409 M 228.7141,-219.17221 c 60.7143,102.8572 194.4046,381.3761 217.202,641.32384 22.7974,259.9477 -65.298,501.32409 -65.298,501.32409 M 566.071,-459.71099 c 0,0 -55.0801,-109.4457 -74.2857,-156.4286 -72.9345,-178.4208 -126.2902,368.70998 -138.2211,188.24098 -7.2503,-109.67008 34.0196,-250.09598 8.7534,-440.72768 -25.2662,-190.63161 -109.818,-321.79911 -178.3895,-532.51341 191.4286,335.7144 297.1429,334.2858 297.1429,334.2858 l 0,0 0,0 1.4286,0 M 478.8491,0.07678813 C 543.1349,-194.92311 565.6349,-456.70879 565.6349,-456.70879 M 656.117,1.6228881 C 591.8312,-193.37701 568.2598,-461.23419 568.2598,-461.23419 m -388.8309,-429.4802 c 59.4887,-134.09811 60.1228,-27.6793 78.4628,130.3183 11.7497,101.2229 -1.0197,289.4328 82.3438,473.83928 85.4841,189.097598 136.3362,280.1279981 136.3362,280.1279981 M 953.9741,-884.80549 c -59.4888,-134.09811 -60.1228,-27.6793 -78.4628,130.3183 -11.7498,101.2229 1.0197,289.4328 -82.3438,473.83928 C 707.6834,-91.550312 656.8312,-0.51991187 656.8312,-0.51991187 M 570.4027,-460.51979 c 0,0 55.0801,-109.4457 74.2857,-156.4286 72.9345,-178.4208 126.2902,368.70998 138.2211,188.24098 7.2503,-109.67008 -34.0196,-250.09598 -8.7534,-440.72768 25.2661,-190.63161 109.818,-321.79911 178.3894,-532.51341 -191.4285,335.7144 -297.1428,334.2858 -297.1428,334.2858 l 0,0 0,0 -1.4286,0 m -86.567,-1362.4416 c -264.66,613.9159 46.8365,784.6349 -123.2387,764.811 l 35.8035,98.6043 m 88.4837,-861.3375 c 264.66,613.9159 -46.8366,784.6349 123.2386,764.811 l -35.8035,98.6043 m -86.4634,-870.9678 c -264.66,613.9156 -264.66,1121.378 -264.66,1121.378 l 0,-8.2682 m 263.6499,-1116.2104 c 264.66,613.9158 264.66,1121.378 264.66,1121.378 l 0,-8.2682 m -263.65,270.7845 c -142.8203,0 -258.599,-117.9954 -258.599,-263.5499 0,-145.5544 115.7787,-263.5497 258.599,-263.5497 142.8203,0 258.5991,117.9953 258.5991,263.5497 0,145.5545 -115.7788,263.5499 -258.5991,263.5499 z"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

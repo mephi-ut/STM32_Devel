@@ -1,0 +1,7 @@
+verilog work "sdc_divider.vf"
+verilog work "sdc.vf"
+verilog work "distance_module.vf"
+verilog work "topboard.vf"
+vhdl work "top_module_test.vhd"
+verilog work "input_schheme.vf"
+verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

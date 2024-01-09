@@ -1,0 +1,59 @@
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+xst -intstyle ise -ifn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.xst" -ofn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc SDC_PINOUT.ucf -p xc6slx9-tqg144-3 sdc.ngc sdc.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sdc_map.ncd sdc.ngd sdc.pcf 
+xst -intstyle ise -ifn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.xst" -ofn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc SDC_PINOUT.ucf -p xc6slx9-tqg144-3 sdc.ngc sdc.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sdc_map.ncd sdc.ngd sdc.pcf 
+<<<<<<< HEAD
+sch2sym -intstyle ise -family spartan6 -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+sch2sym -intstyle ise -family spartan6 -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2sym -intstyle ise -family spartan6 -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+sch2sym -intstyle ise -family spartan6 -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2sym -intstyle ise -family spartan6 -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2sym -intstyle ise -family spartan6 -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+sch2sym -intstyle ise -family spartan6 -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+xst -intstyle ise -ifn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.xst" -ofn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc sdc.ucf -p xc6slx9-tqg144-3 sdc.ngc sdc.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc sdc.ucf -p xc6slx9-tqg144-3 sdc.ngc sdc.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc sdc.ucf -p xc6slx9-tqg144-3 sdc.ngc sdc.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sdc_map.ncd sdc.ngd sdc.pcf 
+xst -intstyle ise -ifn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.xst" -ofn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc sdc.ucf -p xc6slx9-tqg144-3 sdc.ngc sdc.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sdc_map.ncd sdc.ngd sdc.pcf 
+par -w -intstyle ise -ol high -mt off sdc_map.ncd sdc.ncd sdc.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml sdc.twx sdc.ncd -o sdc.twr sdc.pcf -ucf sdc.ucf 
+bitgen -intstyle ise -f sdc.ut sdc.ncd 
+=======
+sch2sym -intstyle ise -family spartan6 -refsym sdc /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc.vf -w /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 
+xst -intstyle ise -ifn "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.xst" -ofn "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc SDC_PINOUT.ucf -p xc6slx9-tqg144-3 sdc.ngc sdc.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sdc_map.ncd sdc.ngd sdc.pcf 
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sdc_map.ncd sdc.ngd sdc.pcf 
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sdc_map.ncd sdc.ngd sdc.pcf 
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sdc_map.ncd sdc.ngd sdc.pcf 
+xst -intstyle ise -ifn "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.xst" -ofn "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc SDC_PINOUT.ucf -p xc6slx9-tqg144-3 sdc.ngc sdc.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sdc_map.ncd sdc.ngd sdc.pcf 
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.sch 

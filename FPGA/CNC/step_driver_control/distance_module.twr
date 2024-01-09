@@ -1,0 +1,107 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml distance_module.twx distance_module.ncd -o
+distance_module.twr distance_module.pcf
+
+Design file:              distance_module.ncd
+Physical constraint file: distance_module.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock MAIN_TICK
+------------+------------+------------+------------+------------+-------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                   | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s)  | Phase  |
+------------+------------+------------+------------+------------+-------------------+--------+
+COUNT_CLR   |    1.717(R)|      SLOW  |   -0.187(R)|      SLOW  |MAIN_TICK_IBUF_BUFG|   0.000|
+COUNT_EN    |    2.068(R)|      SLOW  |   -0.418(R)|      SLOW  |MAIN_TICK_IBUF_BUFG|   0.000|
+------------+------------+------------+------------+------------+-------------------+--------+
+
+Setup/Hold to clock SET_CLK
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+SET_CLR     |    1.702(R)|      SLOW  |   -0.125(R)|      SLOW  |SET_CLK_BUFGP     |   0.000|
+SET_DATA    |    0.854(R)|      SLOW  |    0.051(R)|      SLOW  |SET_CLK_BUFGP     |   0.000|
+SET_DATA_E  |    1.884(R)|      SLOW  |    0.178(R)|      SLOW  |SET_CLK_BUFGP     |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock MAIN_TICK to Pad
+------------+-----------------+------------+-----------------+------------+-------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                   | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)  | Phase  |
+------------+-----------------+------------+-----------------+------------+-------------------+--------+
+DIST_END    |         9.832(R)|      SLOW  |         4.458(R)|      FAST  |MAIN_TICK_IBUF_BUFG|   0.000|
+MAIN_TICK_O |        10.066(R)|      SLOW  |         4.555(R)|      FAST  |MAIN_TICK_IBUF_BUFG|   0.000|
+------------+-----------------+------------+-----------------+------------+-------------------+--------+
+
+Clock SET_CLK to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+DIST_END    |        10.131(R)|      SLOW  |         4.679(R)|      FAST  |SET_CLK_BUFGP     |   0.000|
+MAIN_TICK_O |        10.365(R)|      SLOW  |         4.776(R)|      FAST  |SET_CLK_BUFGP     |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock MAIN_TICK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+MAIN_TICK      |    4.812|         |         |         |
+SET_CLK        |    5.766|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock SET_CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+SET_CLK        |    1.539|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+MAIN_TICK      |MAIN_TICK_O    |    8.396|
+---------------+---------------+---------+
+
+
+Analysis completed Thu Jul 19 17:26:07 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 384 MB
+
+
+

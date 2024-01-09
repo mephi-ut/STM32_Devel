@@ -1,0 +1,9 @@
+MODULE topboard
+	SUBMODULE distance_module
+		INSTANCE XLXI_1
+	SUBMODULE sdc
+		INSTANCE XLXI_2
+	SUBMODULE sdc_divider
+		INSTANCE XLXI_3
+	SUBMODULE indic_4reg_decoder
+		INSTANCE XLXI_4

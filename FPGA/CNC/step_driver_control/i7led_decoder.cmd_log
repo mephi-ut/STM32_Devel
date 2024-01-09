@@ -1,0 +1,2 @@
+sch2hdl -intstyle ise -family spartan6 -verilog i7led_decoder_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/i7led_decoder.sch 
+sch2sym -intstyle ise -family spartan6 -w -refsym i7led_decoder /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/i7led_decoder.sch /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/i7led_decoder.sym 

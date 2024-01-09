@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<report-views version="2.0" >
+ <header>
+  <ImplementationReportsDirectory>/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/</ImplementationReportsDirectory>
+  <ModuleName>input_schheme</ModuleName>
+  <DateModified>2018-07-19T14:02:40</DateModified>
+  <SavedFilePath>/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/iseconfig/sdc.xreport</SavedFilePath>
+  <DateInitialized>2018-07-19T14:02:40</DateInitialized>
+  <EnableMessageFiltering>false</EnableMessageFiltering>
+ </header>
+</report-views>

@@ -1,0 +1,3 @@
+sch2sym -intstyle ise -family spartan6 -w -refsym topboard /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/topboard.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/topboard.sym 
+sch2hdl -intstyle ise -family spartan6 -verilog topboard_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/topboard.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog topboard_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/topboard.sch 

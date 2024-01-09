@@ -1,0 +1,172 @@
+#!/bin/bash
+
+declare -i L_POS M_POS L_VAL M_VAL L_SPEED M_SPEED STAT ERRS
+declare -a COMMAND_NOW
+
+echo -n '' >/tmp/command
+
+L_POS=0
+L_TO_POS=0
+M_POS=0
+M_TO_POS=0
+L_VAL=0
+M_VAL=0
+L_SPEED=0
+M_SPEED=0
+M_START=0
+L_START=0
+M_POS_MAX=55
+M_POS_MIN=5
+
+STAT=0
+ERRS=0
+
+READY=1
+M_SW=2
+D_SW=4
+U_SW=8
+M_DIR=16
+L_DIR=32
+
+
+M_SW_N=0
+D_SW_N=0
+U_SW_N=0
+M_DIR_N=0
+L_DIR_N=0
+
+
+
+HEAD_E=1
+M_ENGINE_OL=2
+L_ENGINE_OL=4
+L_OVER=8
+DESTR=16
+M_ADC_ERR=32
+L_ADC_ERR=64
+
+while [ 1 ];
+do
+STAT=0
+COMMAND=`cat /tmp/command | grep -e ^H | head -n1`
+
+    if [ "$COMMAND" != "" ];
+    then
+	COMMAND_NOW=(`echo $COMMAND`)
+	echo -n '' >/tmp/command
+	
+	case ${COMMAND_NOW[0]} in
+	
+	"H00")
+		L_START=0
+		M_START=0
+	;;
+	
+	"H11")
+	    L_SPEED=${COMMAND_NOW[1]}
+	;;
+	"H12")
+	    L_TO_POS=${COMMAND_NOW[1]}
+	;;
+	"H13")
+	    if [ ${COMMAND_NOW[1]} != 0 ];
+	    then
+		L_DIR_N=$L_DIR
+	    else
+		L_DIR_N=0
+	    fi
+	;;
+	"H14")
+	    if [ ${COMMAND_NOW[1]} != 0 ];
+	    then
+		L_START=1
+	    else
+		L_START=0
+	    fi
+	;;
+	
+	"H21")
+	    M_SPEED=${COMMAND_NOW[1]}
+	;;
+	"H22")
+	    M_TO_POS=${COMMAND_NOW[1]}
+	;;
+	"H23")
+	    if [ ${COMMAND_NOW[1]} != 0 ];
+	    then
+		M_DIR_N=$M_DIR
+	    else
+		M_DIR_N=0
+	    fi
+	;;
+	"H24")
+	    if [ ${COMMAND_NOW[1]} != 0 ];
+	    then
+		M_START=1
+	    else
+		M_START=0
+	    fi
+	;;
+	
+	esac
+    fi
+
+    if [ $M_POS -gt $M_POS_MAX ];
+    then
+	U_SW_N=$U_SW
+    fi
+
+    if [ $M_POS -lt $M_POS_MIN ];
+    then
+	D_SW_N=$D_SW
+    fi
+
+
+
+    if [ $L_START != 0 ];
+    then
+	if [ $L_DIR_N -eq 0 ] && [ $L_TO_POS -lt $L_POS ];
+	then    
+	    let L_POS=$L_POS-1
+	elif [ $L_DIR_N -eq $L_DIR ] && [ $L_TO_POS -gt $L_POS ];
+	then
+	    let L_POS=$L_POS+1
+	else
+	    L_START=0    
+	fi
+    fi
+
+
+    if [ $M_START != 0 ];
+    then
+	if [ $M_DIR_N -eq 0 ] && [ $M_TO_POS -lt $M_POS ] && [ $D_SW_N -eq 0 ];
+	then 
+	    U_SW_N=0   
+	    let M_POS=$M_POS-1
+	elif [ $M_DIR_N -eq $M_DIR ] && [ $M_TO_POS -gt $M_POS ] && [ $U_SW_N -eq 0 ];
+	then
+	    D_SW_N=0
+	    let M_POS=$M_POS+1
+	else
+	    M_START=0    
+	fi
+	
+    fi
+
+
+#    if [ $M_START != 0 ];
+#    then
+	let STAT=$STAT+$L_DIR_N+$M_DIR_N+$U_SW_N+$D_SW_N+128+$READY+$M_SW_N
+	STAT_OUT=` echo "obase=2;$STAT"| bc`
+	ERRS_OUT=` echo "obase=2;$ERRS"| bc`
+	let L_VAL=$L_POS*7
+	let M_VAL=$M_POS*6
+	echo $L_POS  $M_POS  $L_VAL  $M_VAL  $L_SPEED $M_SPEED  $STAT_OUT  $ERRS_OUT
+#    fi
+    
+sleep 0.1
+
+done
+
+
+

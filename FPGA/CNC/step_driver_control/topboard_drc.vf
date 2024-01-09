@@ -1,0 +1,561 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : topboard_drc.vf
+// /___/   /\     Timestamp : 07/20/2018 15:07:41
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/sch2hdl -intstyle ise -family spartan6 -verilog topboard_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/topboard.sch
+//Design Name: topboard
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FTC_HXILINX_topboard(Q, C, CLR, T);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              T;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+  
+   
+ 
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else if(T)
+          Q <= !Q;
+     end
+   
+endmodule
+`timescale 100 ps / 10 ps
+
+module CB4CLED_HXILINX_topboard(CEO, Q0, Q1, Q2, Q3, TC, C, CE, CLR, D0, D1, D2, D3, L, UP);
+
+   parameter TERMINAL_COUNT_UP = 4'b1111;
+   parameter TERMINAL_COUNT_DOWN = 4'b0000;
+   
+   output             CEO;
+   output             Q0;
+   output             Q1;
+   output             Q2;
+   output             Q3;
+   output             TC;
+   
+   input 	      C;
+   input 	      CE;
+   input 	      CLR;
+   input              D0;
+   input              D1;
+   input              D2;
+   input              D3;
+   input 	      L;	
+   input 	      UP;	
+   
+   reg                Q0;
+   reg                Q1;
+   reg                Q2;
+   reg                Q3;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q3, Q2, Q1, Q0} <= 4'b0000;
+	else if (L)
+	  {Q3, Q2, Q1, Q0} <= {D3, D2, D1, D0};
+	else if (CE)
+	  begin
+	     if (UP)
+	       {Q3, Q2, Q1, Q0} <= {Q3, Q2, Q1, Q0} + 1;
+	     else if (!UP)
+	       {Q3, Q2, Q1, Q0} <= {Q3, Q2, Q1, Q0} - 1;
+	  end
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = CLR ? 1'b0 : ( ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT_UP && UP) || ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT_DOWN && !UP) );
+   
+endmodule
+`timescale  100 ps / 10 ps
+
+module COMP8_HXILINX_topboard (EQ, A, B);
+    
+
+   output EQ;
+
+   input  [7:0] A;
+   input  [7:0] B;
+
+   assign EQ = (A==B) ;
+
+endmodule
+`timescale 100 ps / 10 ps
+
+module CB16CE_HXILINX_topboard(CEO, Q, TC, C, CE, CLR);
+   
+   localparam TERMINAL_COUNT = 16'b1111_1111_1111_1111;
+   
+   output             CEO;
+   output [15:0]      Q;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg    [15:0]      Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 16'b0000_0000_0000_0000;
+	else if (CE)
+	  Q <= Q + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = (Q == TERMINAL_COUNT);
+   
+endmodule
+`timescale 100 ps / 10 ps
+
+module SR16CE_HXILINX_topboard(Q, C, CE, CLR, SLI) ;
+  
+   
+   output [15:0]      Q;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   input              SLI;
+   
+   reg    [15:0]      Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 16'b0000_0000_0000_0000;
+	else if (CE)
+          Q <= {Q[14:0], SLI};
+     end
+   
+   
+endmodule
+`timescale 100 ps / 10 ps
+
+module SR8CE_HXILINX_topboard(Q, C, CE, CLR, SLI) ;
+  
+   
+   output [7:0]       Q;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   input              SLI;
+   
+   reg    [7:0]       Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 8'b0000_0000;
+	else if (CE)
+          Q <= {Q[6:0], SLI};
+     end
+   
+   
+endmodule
+`timescale 100 ps / 10 ps
+
+module CB8CE_HXILINX_topboard(CEO, Q, TC, C, CE, CLR);
+   
+   localparam TERMINAL_COUNT = 8'b1111_1111;
+   
+   output             CEO;
+   output [7:0]       Q;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg   [7:0]        Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 8'b0000_0000;
+	else if (CE)
+	  Q <= Q + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = (Q == TERMINAL_COUNT);
+   
+endmodule
+`timescale  100 ps / 10 ps
+
+module M2_1_HXILINX_topboard (O, D0, D1, S0);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  S0;
+
+   reg O;
+
+   always @ ( D0 or D1 or S0)
+   begin
+      case(S0)
+      1'b0 : O <= D0;
+      1'b1 : O <= D1;
+      endcase
+   end
+    
+endmodule
+`timescale  100 ps / 10 ps
+
+module COMP16_HXILINX_topboard (EQ, A, B);
+    
+
+   output EQ;
+
+   input  [15:0] A;
+   input  [15:0] B;
+
+   assign EQ = (A == B) ;
+
+endmodule
+`timescale 1ns / 1ps
+
+module sdc_divider_MUSER_topboard(DIV_EN, 
+                                  RST, 
+                                  SET_DIV_CLK, 
+                                  SET_DIV_DATA_div2, 
+                                  SET_DIV_EN, 
+                                  SYS_CLK, 
+                                  MAIN_TICK);
+
+    input DIV_EN;
+    input RST;
+    input SET_DIV_CLK;
+    input SET_DIV_DATA_div2;
+    input SET_DIV_EN;
+    input SYS_CLK;
+   output MAIN_TICK;
+   
+   wire [7:0] XLXN_1;
+   wire [7:0] XLXN_2;
+   wire XLXN_8;
+   wire XLXN_12;
+   wire XLXN_23;
+   wire XLXN_25;
+   
+   assign XLXN_25 = 1;
+   (* HU_SET = "COMPARATOR_1" *) 
+   COMP8_HXILINX_topboard  COMPARATOR (.A(XLXN_1[7:0]), 
+                                      .B(XLXN_2[7:0]), 
+                                      .EQ(XLXN_23));
+   (* HU_SET = "DIV_COUNTER_3" *) 
+   CB8CE_HXILINX_topboard  DIV_COUNTER (.C(SYS_CLK), 
+                                       .CE(DIV_EN), 
+                                       .CLR(XLXN_8), 
+                                       .CEO(), 
+                                       .Q(XLXN_2[7:0]), 
+                                       .TC());
+   (* HU_SET = "SET_SHIFT_0" *) 
+   SR8CE_HXILINX_topboard  SET_SHIFT (.C(SET_DIV_CLK), 
+                                     .CE(SET_DIV_EN), 
+                                     .CLR(RST), 
+                                     .SLI(SET_DIV_DATA_div2), 
+                                     .Q(XLXN_1[7:0]));
+   (* HU_SET = "XLXI_7_2" *) 
+   FTC_HXILINX_topboard  XLXI_7 (.C(XLXN_23), 
+                                .CLR(RST), 
+                                .T(XLXN_25), 
+                                .Q(MAIN_TICK));
+   OR2  XLXI_16 (.I0(XLXN_12), 
+                .I1(RST), 
+                .O(XLXN_8));
+   AND2  XLXI_17 (.I0(XLXN_23), 
+                 .I1(SYS_CLK), 
+                 .O(XLXN_12));
+endmodule
+`timescale 1ns / 1ps
+
+module distance_module_MUSER_topboard(COUNT_CLR, 
+                                      COUNT_EN, 
+                                      MAIN_TICK, 
+                                      SET_CLK, 
+                                      SET_CLR, 
+                                      SET_DATA, 
+                                      SET_DATA_E, 
+                                      DIST_END, 
+                                      MAIN_TICK_O);
+
+    input COUNT_CLR;
+    input COUNT_EN;
+    input MAIN_TICK;
+    input SET_CLK;
+    input SET_CLR;
+    input SET_DATA;
+    input SET_DATA_E;
+   output DIST_END;
+   output MAIN_TICK_O;
+   
+   wire [7:0] XLXN_1;
+   wire [15:0] XLXN_2;
+   wire XLXN_6;
+   wire XLXN_7;
+   wire XLXN_8;
+   wire [7:0] XLXN_10;
+   wire [15:0] XLXN_11;
+   wire XLXN_20;
+   wire XLXN_22;
+   wire DIST_END_DUMMY;
+   
+   assign DIST_END = DIST_END_DUMMY;
+   (* HU_SET = "H_CNT_9" *) 
+   CB8CE_HXILINX_topboard  H_CNT (.C(MAIN_TICK), 
+                                 .CE(XLXN_8), 
+                                 .CLR(COUNT_CLR), 
+                                 .CEO(), 
+                                 .Q(XLXN_10[7:0]), 
+                                 .TC());
+   (* HU_SET = "H_SHIFT_5" *) 
+   SR8CE_HXILINX_topboard  H_SHIFT (.C(SET_CLK), 
+                                   .CE(SET_DATA_E), 
+                                   .CLR(SET_CLR), 
+                                   .SLI(XLXN_2[15]), 
+                                   .Q(XLXN_1[7:0]));
+   (* HU_SET = "L_CNT_8" *) 
+   CB16CE_HXILINX_topboard  L_CNT (.C(MAIN_TICK), 
+                                  .CE(XLXN_22), 
+                                  .CLR(COUNT_CLR), 
+                                  .CEO(XLXN_8), 
+                                  .Q(XLXN_11[15:0]), 
+                                  .TC());
+   (* HU_SET = "L_SHIFT_4" *) 
+   SR16CE_HXILINX_topboard  L_SHIFT (.C(SET_CLK), 
+                                    .CE(SET_DATA_E), 
+                                    .CLR(SET_CLR), 
+                                    .SLI(SET_DATA), 
+                                    .Q(XLXN_2[15:0]));
+   (* HU_SET = "XLXI_6_6" *) 
+   COMP16_HXILINX_topboard  XLXI_6 (.A(XLXN_2[15:0]), 
+                                   .B(XLXN_11[15:0]), 
+                                   .EQ(XLXN_7));
+   (* HU_SET = "XLXI_7_7" *) 
+   COMP8_HXILINX_topboard  XLXI_7 (.A(XLXN_1[7:0]), 
+                                  .B(XLXN_10[7:0]), 
+                                  .EQ(XLXN_6));
+   AND2  XLXI_12 (.I0(XLXN_7), 
+                 .I1(XLXN_6), 
+                 .O(DIST_END_DUMMY));
+   AND2  XLXI_15 (.I0(COUNT_EN), 
+                 .I1(XLXN_20), 
+                 .O(XLXN_22));
+   INV  XLXI_16 (.I(DIST_END_DUMMY), 
+                .O(XLXN_20));
+   AND2  XLXI_18 (.I0(MAIN_TICK), 
+                 .I1(XLXN_20), 
+                 .O(MAIN_TICK_O));
+endmodule
+`timescale 1ns / 1ps
+
+module sdc_MUSER_topboard(ENBL, 
+                          IS_UP, 
+                          L_INIT, 
+                          MAIN_TICK, 
+                          RST, 
+                          A1, 
+                          A2, 
+                          B1, 
+                          B2);
+
+    input ENBL;
+    input IS_UP;
+    input L_INIT;
+    input MAIN_TICK;
+    input RST;
+   output A1;
+   output A2;
+   output B1;
+   output B2;
+   
+   wire load;
+   wire XLXN_187;
+   wire XLXN_195;
+   wire XLXN_202;
+   wire XLXN_208;
+   wire XLXN_209;
+   wire XLXN_214;
+   wire XLXN_215;
+   wire XLXN_216;
+   wire XLXN_312;
+   wire XLXN_315;
+   wire XLXN_316;
+   wire XLXN_320;
+   wire XLXN_322;
+   wire XLXN_327;
+   wire XLXN_336;
+   wire XLXN_378;
+   wire XLXN_380;
+   wire XLXN_389;
+   wire XLXN_391;
+   wire XLXN_394;
+   
+   assign XLXN_315 = 0;
+   assign XLXN_316 = 1;
+   INV  INV_3 (.I(XLXN_214), 
+              .O(XLXN_202));
+   AND2  LOW (.I0(XLXN_394), 
+             .I1(XLXN_327), 
+             .O(XLXN_336));
+   NAND2  NAND_2_1 (.I0(XLXN_215), 
+                   .I1(XLXN_216), 
+                   .O(XLXN_187));
+   NOR2  NOR_2_1 (.I0(XLXN_216), 
+                 .I1(XLXN_215), 
+                 .O(XLXN_195));
+   (* HU_SET = "XLXI_1_10" *) 
+   CB4CLED_HXILINX_topboard  XLXI_1 (.C(MAIN_TICK), 
+                                    .CE(XLXN_322), 
+                                    .CLR(XLXN_389), 
+                                    .D0(XLXN_312), 
+                                    .D1(XLXN_312), 
+                                    .D2(XLXN_312), 
+                                    .D3(XLXN_312), 
+                                    .L(load), 
+                                    .UP(IS_UP), 
+                                    .CEO(), 
+                                    .Q0(XLXN_216), 
+                                    .Q1(XLXN_215), 
+                                    .Q2(XLXN_214), 
+                                    .Q3(XLXN_394), 
+                                    .TC());
+   AND2  XLXI_92 (.I0(XLXN_202), 
+                 .I1(XLXN_187), 
+                 .O(A1));
+   AND2  XLXI_93 (.I0(XLXN_214), 
+                 .I1(XLXN_187), 
+                 .O(A2));
+   AND2  XLXI_94 (.I0(XLXN_215), 
+                 .I1(XLXN_214), 
+                 .O(XLXN_378));
+   OR2  XLXI_95 (.I0(XLXN_380), 
+                .I1(XLXN_378), 
+                .O(B1));
+   AND2  XLXI_97 (.I0(XLXN_195), 
+                 .I1(XLXN_202), 
+                 .O(XLXN_380));
+   AND2  XLXI_98 (.I0(XLXN_215), 
+                 .I1(XLXN_202), 
+                 .O(XLXN_208));
+   OR2  XLXI_99 (.I0(XLXN_209), 
+                .I1(XLXN_208), 
+                .O(B2));
+   AND2  XLXI_100 (.I0(XLXN_195), 
+                  .I1(XLXN_214), 
+                  .O(XLXN_209));
+   (* HU_SET = "XLXI_128_11" *) 
+   M2_1_HXILINX_topboard  XLXI_128 (.D0(XLXN_336), 
+                                   .D1(XLXN_315), 
+                                   .S0(L_INIT), 
+                                   .O(XLXN_312));
+   (* HU_SET = "XLXI_129_12" *) 
+   M2_1_HXILINX_topboard  XLXI_129 (.D0(XLXN_315), 
+                                   .D1(XLXN_316), 
+                                   .S0(L_INIT), 
+                                   .O(load));
+   AND2  XLXI_131 (.I0(ENBL), 
+                  .I1(XLXN_320), 
+                  .O(XLXN_322));
+   INV  XLXI_132 (.I(load), 
+                 .O(XLXN_320));
+   INV  XLXI_135 (.I(IS_UP), 
+                 .O(XLXN_327));
+   OR2  XLXI_169 (.I0(RST), 
+                 .I1(XLXN_391), 
+                 .O(XLXN_389));
+   AND2  XLXI_170 (.I0(XLXN_394), 
+                  .I1(IS_UP), 
+                  .O(XLXN_391));
+endmodule
+`timescale 1ns / 1ps
+
+module topboard(DIR_IS_UP, 
+                RESET, 
+                SET_DIST_CLK, 
+                SET_DIST_DATA, 
+                SET_DIV_CLK, 
+                SET_DIV_DATA, 
+                SET_ENABLE, 
+                SYS_CLOCK, 
+                WORK_ENABLE, 
+                A1, 
+                A2, 
+                B1, 
+                B2, 
+                DIST_FINISH);
+
+    input DIR_IS_UP;
+    input RESET;
+    input SET_DIST_CLK;
+    input SET_DIST_DATA;
+    input SET_DIV_CLK;
+    input SET_DIV_DATA;
+    input SET_ENABLE;
+    input SYS_CLOCK;
+    input WORK_ENABLE;
+   output A1;
+   output A2;
+   output B1;
+   output B2;
+   output DIST_FINISH;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   
+   distance_module_MUSER_topboard  XLXI_1 (.COUNT_CLR(RESET), 
+                                          .COUNT_EN(WORK_ENABLE), 
+                                          .MAIN_TICK(XLXN_2), 
+                                          .SET_CLK(SET_DIST_CLK), 
+                                          .SET_CLR(RESET), 
+                                          .SET_DATA(SET_DIST_DATA), 
+                                          .SET_DATA_E(SET_ENABLE), 
+                                          .DIST_END(DIST_FINISH), 
+                                          .MAIN_TICK_O(XLXN_1));
+   sdc_MUSER_topboard  XLXI_2 (.ENBL(WORK_ENABLE), 
+                              .IS_UP(DIR_IS_UP), 
+                              .L_INIT(SET_ENABLE), 
+                              .MAIN_TICK(XLXN_1), 
+                              .RST(RESET), 
+                              .A1(A1), 
+                              .A2(A2), 
+                              .B1(B1), 
+                              .B2(B2));
+   sdc_divider_MUSER_topboard  XLXI_3 (.DIV_EN(WORK_ENABLE), 
+                                      .RST(RESET), 
+                                      .SET_DIV_CLK(SET_DIV_CLK), 
+                                      .SET_DIV_DATA_div2(SET_DIV_DATA), 
+                                      .SET_DIV_EN(SET_ENABLE), 
+                                      .SYS_CLK(SYS_CLOCK), 
+                                      .MAIN_TICK(XLXN_2));
+endmodule

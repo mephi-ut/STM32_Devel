@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -O0 -nostartfiles -Map=uart_leds.map -mcpu=cortex-m3 -mthumb -LC:\CooCox\CoIDE\workspace\uart_leds --gc-sections -TC:\CooCox\CoIDE\workspace\uart_leds\link.ld -g">
+      <target file="uart_leds.elf" lastModified="137708fda7c">
+         <source file="..\obj\startup_stm32f10x_md_vl.o" lastModified="1376b60de5a"/>
+         <source file="..\obj\core_cm3.o" lastModified="1376b60dfe1"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="1376b60e10a"/>
+         <source file="..\obj\stm32f10x_gpio.o" lastModified="1376b60e223"/>
+         <source file="..\obj\main.o" lastModified="137708fd9c0"/>
+         <source file="..\obj\stm32f10x_rcc.o" lastModified="1376b60e4b3"/>
+         <source file="..\obj\stm32f10x_usart.o" lastModified="1377054de63"/>
+      </target>
+   </processor>
+</history>

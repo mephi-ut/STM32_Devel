@@ -1,0 +1,76 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : input_schheme.vf
+// /___/   /\     Timestamp : 07/19/2018 14:49:18
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.sch
+//Design Name: input_schheme
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module SR8CE_HXILINX_input_schheme(Q, C, CE, CLR, SLI) ;
+  
+   
+   output [7:0]       Q;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   input              SLI;
+   
+   reg    [7:0]       Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 8'b0000_0000;
+	else if (CE)
+          Q <= {Q[6:0], SLI};
+     end
+   
+   
+endmodule
+`timescale 1ns / 1ps
+
+module input_schheme(clk, 
+                     datain, 
+                     enbl, 
+                     rst, 
+                     XLXN_64, 
+                     XLXN_65);
+
+    input clk;
+    input datain;
+    input enbl;
+    input rst;
+   output [7:0] XLXN_64;
+   output [7:0] XLXN_65;
+   
+   wire [7:0] XLXN_64_DUMMY;
+   
+   assign XLXN_64[7:0] = XLXN_64_DUMMY[7:0];
+   (* HU_SET = "XLXI_9_0" *) 
+   SR8CE_HXILINX_input_schheme  XLXI_9 (.C(clk), 
+                                       .CE(enbl), 
+                                       .CLR(rst), 
+                                       .SLI(XLXN_64_DUMMY[7]), 
+                                       .Q(XLXN_65[7:0]));
+   (* HU_SET = "XLXI_10_1" *) 
+   SR8CE_HXILINX_input_schheme  XLXI_10 (.C(clk), 
+                                        .CE(enbl), 
+                                        .CLR(rst), 
+                                        .SLI(datain), 
+                                        .Q(XLXN_64_DUMMY[7:0]));
+endmodule

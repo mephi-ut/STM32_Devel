@@ -1,0 +1,25 @@
+echo 'H11 5'>/tmp/command 
+sleep 1
+echo 'H12 200'>/tmp/command
+sleep 1
+echo 'H13 1'>/tmp/command
+sleep 1
+echo 'H14 1'>/tmp/command
+sleep 1
+echo 'H21 5'>/tmp/command 
+sleep 1
+echo 'H22 100'>/tmp/command
+sleep 1
+echo 'H23 1'>/tmp/command
+sleep 1
+echo 'H24 1'>/tmp/command
+
+sleep 3
+
+echo 'H21 5'>/tmp/command 
+sleep 1
+echo 'H22 0'>/tmp/command
+sleep 1
+echo 'H23 0'>/tmp/command
+sleep 1
+echo 'H24 1'>/tmp/command

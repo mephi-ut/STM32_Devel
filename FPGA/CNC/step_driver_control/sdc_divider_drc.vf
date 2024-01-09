@@ -1,0 +1,164 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : sdc_divider_drc.vf
+// /___/   /\     Timestamp : 07/19/2018 19:40:31
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/sch2hdl -intstyle ise -family spartan6 -verilog sdc_divider_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc_divider.sch
+//Design Name: sdc_divider
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FTC_HXILINX_sdc_divider(Q, C, CLR, T);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              T;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+  
+   
+ 
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else if(T)
+          Q <= !Q;
+     end
+   
+endmodule
+`timescale  100 ps / 10 ps
+
+module COMP8_HXILINX_sdc_divider (EQ, A, B);
+    
+
+   output EQ;
+
+   input  [7:0] A;
+   input  [7:0] B;
+
+   assign EQ = (A==B) ;
+
+endmodule
+`timescale 100 ps / 10 ps
+
+module SR8CE_HXILINX_sdc_divider(Q, C, CE, CLR, SLI) ;
+  
+   
+   output [7:0]       Q;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   input              SLI;
+   
+   reg    [7:0]       Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 8'b0000_0000;
+	else if (CE)
+          Q <= {Q[6:0], SLI};
+     end
+   
+   
+endmodule
+`timescale 100 ps / 10 ps
+
+module CB8CE_HXILINX_sdc_divider(CEO, Q, TC, C, CE, CLR);
+   
+   localparam TERMINAL_COUNT = 8'b1111_1111;
+   
+   output             CEO;
+   output [7:0]       Q;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg   [7:0]        Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 8'b0000_0000;
+	else if (CE)
+	  Q <= Q + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = (Q == TERMINAL_COUNT);
+   
+endmodule
+`timescale 1ns / 1ps
+
+module sdc_divider(DIV_EN, 
+                   RST, 
+                   SET_DIV_CLK, 
+                   SET_DIV_DATA_div2, 
+                   SET_DIV_EN, 
+                   SYS_CLK, 
+                   MAIN_TICK);
+
+    input DIV_EN;
+    input RST;
+    input SET_DIV_CLK;
+    input SET_DIV_DATA_div2;
+    input SET_DIV_EN;
+    input SYS_CLK;
+   output MAIN_TICK;
+   
+   wire [7:0] XLXN_1;
+   wire [7:0] XLXN_2;
+   wire XLXN_8;
+   wire XLXN_12;
+   wire XLXN_23;
+   wire XLXN_25;
+   
+   assign XLXN_25 = 1;
+   (* HU_SET = "XLXI_2_0" *) 
+   SR8CE_HXILINX_sdc_divider  XLXI_2 (.C(SET_DIV_CLK), 
+                                     .CE(SET_DIV_EN), 
+                                     .CLR(RST), 
+                                     .SLI(SET_DIV_DATA_div2), 
+                                     .Q(XLXN_1[7:0]));
+   (* HU_SET = "XLXI_3_3" *) 
+   CB8CE_HXILINX_sdc_divider  XLXI_3 (.C(SYS_CLK), 
+                                     .CE(DIV_EN), 
+                                     .CLR(XLXN_8), 
+                                     .CEO(), 
+                                     .Q(XLXN_2[7:0]), 
+                                     .TC());
+   (* HU_SET = "XLXI_4_1" *) 
+   COMP8_HXILINX_sdc_divider  XLXI_4 (.A(XLXN_1[7:0]), 
+                                     .B(XLXN_2[7:0]), 
+                                     .EQ(XLXN_23));
+   (* HU_SET = "XLXI_7_2" *) 
+   FTC_HXILINX_sdc_divider  XLXI_7 (.C(XLXN_23), 
+                                   .CLR(RST), 
+                                   .T(XLXN_25), 
+                                   .Q(MAIN_TICK));
+   OR2  XLXI_16 (.I0(XLXN_12), 
+                .I1(RST), 
+                .O(XLXN_8));
+   AND2  XLXI_17 (.I0(XLXN_23), 
+                 .I1(SYS_CLK), 
+                 .O(XLXN_12));
+endmodule

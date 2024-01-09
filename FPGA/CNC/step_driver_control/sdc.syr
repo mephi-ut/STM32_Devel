@@ -1,0 +1,574 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: sdc.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "sdc.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "sdc"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-tqg144
+
+---- Source Options
+Top Module Name                    : sdc
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf" into library work
+Parsing module <CB4CLED_HXILINX_sdc>.
+Parsing module <M2_1_HXILINX_sdc>.
+Parsing module <sdc>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <sdc>.
+
+<<<<<<< HEAD
+=======
+Elaborating module <CB4CLED_HXILINX_sdc>.
+WARNING:HDLCompiler:413 - "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf" Line 59: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf" Line 61: Result of 32-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <NAND2>.
+
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+Elaborating module <INV>.
+
+Elaborating module <AND2>.
+
+Elaborating module <NAND2>.
+
+Elaborating module <NOR2>.
+
+Elaborating module <CB4CLED_HXILINX_sdc>.
+WARNING:HDLCompiler:413 - "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf" Line 59: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf" Line 61: Result of 32-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <OR2>.
+
+Elaborating module <M2_1_HXILINX_sdc>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <sdc>.
+    Related source file is "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf".
+    Set property "HU_SET = XLXI_1_0" for instance <XLXI_1>.
+<<<<<<< HEAD
+    Set property "HU_SET = XLXI_128_1" for instance <XLXI_128>.
+    Set property "HU_SET = XLXI_129_2" for instance <XLXI_129>.
+INFO:Xst:3210 - "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf" line 149: Output port <CEO> of the instance <XLXI_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf" line 149: Output port <TC> of the instance <XLXI_1> is unconnected or connected to loadless signal.
+=======
+INFO:Xst:3210 - "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf" line 108: Output port <CEO> of the instance <XLXI_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf" line 108: Output port <TC> of the instance <XLXI_1> is unconnected or connected to loadless signal.
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+    Summary:
+	no macro.
+Unit <sdc> synthesized.
+
+Synthesizing Unit <CB4CLED_HXILINX_sdc>.
+    Related source file is "/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf".
+        TERMINAL_COUNT_UP = 4'b1111
+        TERMINAL_COUNT_DOWN = 4'b0000
+    Found 1-bit register for signal <Q1>.
+    Found 1-bit register for signal <Q2>.
+    Found 1-bit register for signal <Q3>.
+    Found 1-bit register for signal <Q0>.
+    Found 4-bit adder for signal <Q3_GND_6_o_add_0_OUT> created at line 59.
+    Found 4-bit subtractor for signal <GND_6_o_GND_6_o_sub_2_OUT<3:0>> created at line 61.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+Unit <CB4CLED_HXILINX_sdc> synthesized.
+
+Synthesizing Unit <M2_1_HXILINX_sdc>.
+    Related source file is "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc.vf".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <M2_1_HXILINX_sdc> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+# Registers                                            : 4
+ 1-bit register                                        : 4
+<<<<<<< HEAD
+# Multiplexers                                         : 11
+ 1-bit 2-to-1 multiplexer                              : 11
+=======
+# Multiplexers                                         : 9
+ 1-bit 2-to-1 multiplexer                              : 9
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+# Multiplexers                                         : 9
+ 1-bit 2-to-1 multiplexer                              : 9
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <XLXI_129> ...
+
+Optimizing unit <XLXI_128> ...
+
+Optimizing unit <sdc> ...
+
+Optimizing unit <CB4CLED_HXILINX_sdc> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block sdc, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : sdc.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+<<<<<<< HEAD
+# BELS                             : 22
+#      AND2                        : 9
+#      INV                         : 3
+#      LUT2                        : 2
+#      LUT3                        : 1
+#      LUT4                        : 2
+#      LUT5                        : 1
+#      LUT6                        : 1
+#      OR2                         : 3
+=======
+# BELS                             : 15
+#      AND2                        : 4
+#      AND3                        : 1
+#      INV                         : 2
+#      LUT2                        : 2
+#      LUT4                        : 1
+#      LUT5                        : 1
+#      LUT6                        : 1
+#      OR2                         : 2
+#      XOR2                        : 1
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+# FlipFlops/Latches                : 4
+#      FDCE                        : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 8
+<<<<<<< HEAD
+#      IBUF                        : 4
+#      OBUF                        : 4
+=======
+#      IBUF                        : 3
+#      OBUF                        : 5
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+# Logical                          : 2
+#      NAND2                       : 1
+#      NOR2                        : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               4  out of  11440     0%  
+<<<<<<< HEAD
+ Number of Slice LUTs:                   10  out of   5720     0%  
+    Number used as Logic:                10  out of   5720     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     14
+   Number with an unused Flip Flop:      10  out of     14    71%  
+   Number with an unused LUT:             4  out of     14    28%  
+   Number of fully used LUT-FF pairs:     0  out of     14     0%  
+=======
+ Number of Slice LUTs:                    7  out of   5720     0%  
+    Number used as Logic:                 7  out of   5720     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     11
+   Number with an unused Flip Flop:       7  out of     11    63%  
+   Number with an unused LUT:             4  out of     11    36%  
+   Number of fully used LUT-FF pairs:     0  out of     11     0%  
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    102     8%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clock                              | BUFGP                  | 4     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+<<<<<<< HEAD
+   Minimum period: 3.925ns (Maximum Frequency: 254.800MHz)
+   Minimum input arrival time before clock: 5.499ns
+   Maximum output required time after clock: 7.274ns
+=======
+   Minimum period: 1.773ns (Maximum Frequency: 564.127MHz)
+   Minimum input arrival time before clock: 3.249ns
+   Maximum output required time after clock: 7.287ns
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+<<<<<<< HEAD
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 3.925ns (frequency: 254.800MHz)
+  Total number of paths / destination ports: 18 / 8
+-------------------------------------------------------------------------
+Delay:               3.925ns (Levels of Logic = 3)
+  Source:            XLXI_1/Q3 (FF)
+  Destination:       XLXI_1/Q2 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: XLXI_1/Q3 to XLXI_1/Q2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.447   1.015  Q3 (Q3)
+     end scope: 'XLXI_1:Q3'
+     AND2:I0->O            1   0.203   0.924  XLXI_170 (XLXN_391)
+     OR2:I1->O             4   0.223   0.683  XLXI_169 (XLXN_389)
+     begin scope: 'XLXI_1:CLR'
+     FDCE:CLR                  0.430          Q2
+    ----------------------------------------
+    Total                      3.925ns (1.303ns logic, 2.622ns route)
+                                       (33.2% logic, 66.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 35 / 12
+-------------------------------------------------------------------------
+Offset:              5.499ns (Levels of Logic = 6)
+  Source:            L_INIT (PAD)
+  Destination:       XLXI_1/Q2 (FF)
+  Destination Clock: clock rising
+
+  Data Path: L_INIT to XLXI_1/Q2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   1.222   0.773  L_INIT_IBUF (L_INIT_IBUF)
+     begin scope: 'XLXI_129:S0'
+     end scope: 'XLXI_129:O'
+     INV:I->O              1   0.568   0.924  XLXI_132 (XLXN_320)
+     AND2:I1->O            1   0.223   0.580  XLXI_131 (XLXN_322)
+     begin scope: 'XLXI_1:CE'
+     LUT2:I1->O            4   0.205   0.683  _n0043_inv1 (_n0043_inv)
+     FDCE:CE                   0.322          Q2
+    ----------------------------------------
+    Total                      5.499ns (2.540ns logic, 2.959ns route)
+                                       (46.2% logic, 53.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 16 / 4
+-------------------------------------------------------------------------
+Offset:              7.274ns (Levels of Logic = 5)
+  Source:            XLXI_1/Q2 (FF)
+  Destination:       B1 (PAD)
+  Source Clock:      clock rising
+
+  Data Path: XLXI_1/Q2 to B1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             6   0.447   0.744  Q2 (Q2)
+     end scope: 'XLXI_1:Q2'
+     INV:I->O              3   0.568   0.995  INV_3 (XLXN_202)
+     AND2:I1->O            1   0.223   0.924  XLXI_98 (XLXN_208)
+     OR2:I1->O             1   0.223   0.579  XLXI_99 (B2_OBUF)
+     OBUF:I->O                 2.571          B2_OBUF (B2)
+    ----------------------------------------
+    Total                      7.274ns (4.032ns logic, 3.242ns route)
+                                       (55.4% logic, 44.6% route)
+=======
+Timing constraint: Default period analysis for Clock 'CLOCK'
+  Clock period: 1.773ns (frequency: 564.127MHz)
+  Total number of paths / destination ports: 14 / 8
+-------------------------------------------------------------------------
+Delay:               1.773ns (Levels of Logic = 1)
+  Source:            XLXI_1/Q2 (FF)
+  Destination:       XLXI_1/Q2 (FF)
+  Source Clock:      CLOCK rising
+  Destination Clock: CLOCK rising
+
+  Data Path: XLXI_1/Q2 to XLXI_1/Q2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             7   0.447   1.021  Q2 (Q2)
+     LUT5:I1->O            1   0.203   0.000  Q2_D2_MUX_15_o1 (Q2_D2_MUX_15_o)
+     FDCE:D                    0.102          Q2
+    ----------------------------------------
+    Total                      1.773ns (0.752ns logic, 1.021ns route)
+                                       (42.4% logic, 57.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLOCK'
+  Total number of paths / destination ports: 15 / 8
+-------------------------------------------------------------------------
+Offset:              3.249ns (Levels of Logic = 3)
+  Source:            LOAD (PAD)
+  Destination:       XLXI_1/Q2 (FF)
+  Destination Clock: CLOCK rising
+
+  Data Path: LOAD to XLXI_1/Q2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   1.222   0.819  LOAD_IBUF (LOAD_IBUF)
+     begin scope: 'XLXI_1:L'
+     LUT2:I0->O            4   0.203   0.683  _n0043_inv1 (_n0043_inv)
+     FDCE:CE                   0.322          Q2
+    ----------------------------------------
+    Total                      3.249ns (1.747ns logic, 1.502ns route)
+                                       (53.8% logic, 46.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLOCK'
+  Total number of paths / destination ports: 18 / 5
+-------------------------------------------------------------------------
+Offset:              7.287ns (Levels of Logic = 5)
+  Source:            XLXI_1/Q0 (FF)
+  Destination:       B2 (PAD)
+  Source Clock:      CLOCK rising
+
+  Data Path: XLXI_1/Q0 to B2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             9   0.447   0.829  Q0 (Q0)
+     end scope: 'XLXI_1:Q0'
+     INV:I->O              1   0.568   0.924  XLXI_24 (XLXN_47)
+     AND2:I1->O            1   0.223   0.924  XLXI_23 (XLXN_52)
+     OR2:I1->O             1   0.223   0.579  XLXI_25 (B2_OBUF)
+     OBUF:I->O                 2.571          B2_OBUF (B2)
+    ----------------------------------------
+    Total                      7.287ns (4.032ns logic, 3.255ns route)
+                                       (55.3% logic, 44.7% route)
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+<<<<<<< HEAD
+clock          |    3.925|         |         |         |
+=======
+CLOCK          |    1.773|         |         |         |
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+<<<<<<< HEAD
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.66 secs
+=======
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.28 secs
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+ 
+--> 
+
+
+<<<<<<< HEAD
+Total memory usage is 386980 kilobytes
+=======
+Total memory usage is 385028 kilobytes
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

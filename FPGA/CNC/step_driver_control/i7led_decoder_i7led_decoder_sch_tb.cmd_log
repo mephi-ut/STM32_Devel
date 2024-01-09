@@ -1,0 +1,2 @@
+vhdtdtfi -lib work i7led_test.vhd -prj step_driver_control -o i7led_decoder_i7led_decoder_sch_tb.spl -module i7led_decoder_i7led_decoder_sch_tb -template /srv/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 -w i7led_decoder_i7led_decoder_sch_tb.spl /home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/i7led_decoder_i7led_decoder_sch_tb.sym 

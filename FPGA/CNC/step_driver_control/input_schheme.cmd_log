@@ -1,0 +1,15 @@
+xst -intstyle ise -ifn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.xst" -ofn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-3 input_schheme.ngc input_schheme.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o input_schheme_map.ncd input_schheme.ngd input_schheme.pcf 
+par -w -intstyle ise -ol high -mt off input_schheme_map.ncd input_schheme.ncd input_schheme.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml input_schheme.twx input_schheme.ncd -o input_schheme.twr input_schheme.pcf 
+xst -intstyle ise -ifn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.xst" -ofn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-3 input_schheme.ngc input_schheme.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o input_schheme_map.ncd input_schheme.ngd input_schheme.pcf 
+par -w -intstyle ise -ol high -mt off input_schheme_map.ncd input_schheme.ncd input_schheme.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml input_schheme.twx input_schheme.ncd -o input_schheme.twr input_schheme.pcf 
+sch2hdl -intstyle ise -family spartan6 -verilog input_schheme_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog input_schheme_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog input_schheme_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog input_schheme_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.sch 
+sch2hdl -intstyle ise -family spartan6 -verilog input_schheme_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.sch 

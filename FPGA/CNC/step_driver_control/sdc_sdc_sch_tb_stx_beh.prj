@@ -1,0 +1,6 @@
+vhdl isim_temp "step_1.vhd"
+<<<<<<< HEAD
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
+=======
+verilog isim_temp "/srv/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
+>>>>>>> eac539b73e59b5438e5e7726b9d7b874035a6032

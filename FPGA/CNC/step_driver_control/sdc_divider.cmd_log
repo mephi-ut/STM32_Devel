@@ -1,0 +1,8 @@
+sch2hdl -intstyle ise -family spartan6 -verilog sdc_divider_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc_divider.sch 
+xst -intstyle ise -ifn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc_divider.xst" -ofn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc_divider.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-3 sdc_divider.ngc sdc_divider.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sdc_divider_map.ncd sdc_divider.ngd sdc_divider.pcf 
+par -w -intstyle ise -ol high -mt off sdc_divider_map.ncd sdc_divider.ncd sdc_divider.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml sdc_divider.twx sdc_divider.ncd -o sdc_divider.twr sdc_divider.pcf 
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc_divider /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc_divider.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc_divider.sym 
+sch2sym -intstyle ise -family spartan6 -w -refsym sdc_divider /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc_divider.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/sdc_divider.sym 

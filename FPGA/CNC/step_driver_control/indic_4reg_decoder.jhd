@@ -1,0 +1,9 @@
+MODULE indic_4reg_decoder
+	SUBMODULE i7led_decoder
+		INSTANCE REG_1
+	SUBMODULE i7led_decoder
+		INSTANCE REG_2
+	SUBMODULE i7led_decoder
+		INSTANCE REG_3
+	SUBMODULE i7led_decoder
+		INSTANCE REG_4

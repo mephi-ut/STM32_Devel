@@ -1,0 +1,64 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : input_schheme_drc.vf
+// /___/   /\     Timestamp : 07/19/2018 14:20:58
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/sch2hdl -intstyle ise -family spartan6 -verilog input_schheme_drc.vf -w /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/input_schheme.sch
+//Design Name: input_schheme
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module SR16CE_HXILINX_input_schheme(Q, C, CE, CLR, SLI) ;
+  
+   
+   output [15:0]      Q;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   input              SLI;
+   
+   reg    [15:0]      Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 16'b0000_0000_0000_0000;
+	else if (CE)
+          Q <= {Q[14:0], SLI};
+     end
+   
+   
+endmodule
+`timescale 1ns / 1ps
+
+module input_schheme();
+
+   
+   wire [15:0] XLXN_7;
+   
+   (* HU_SET = "XLXI_3_0" *) 
+   SR16CE_HXILINX_input_schheme  XLXI_3 (.C(), 
+                                        .CE(), 
+                                        .CLR(), 
+                                        .SLI(XLXN_7[15]), 
+                                        .Q());
+   (* HU_SET = "XLXI_4_1" *) 
+   SR16CE_HXILINX_input_schheme  XLXI_4 (.C(), 
+                                        .CE(), 
+                                        .CLR(), 
+                                        .SLI(), 
+                                        .Q(XLXN_7[15:0]));
+endmodule

@@ -1,0 +1,29 @@
+Command line:
+   i7led_decoder_i7led_decoder_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  37901
+
+Tue Jul 24 03:44:33 2018
+
+
+ Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 247.046 Meg
+
+ Total Signals          : 228
+ Total Nets             : 114
+ Total Signal Drivers   : 81
+ Total Blocks           : 39
+ Total Primitive Blocks : 37
+ Total Processes        : 80
+ Total Traceable Variables  : 38
+ Total Scalar Nets and Variables : 690
+Total Line Count : 47
+
+ Total Simulation Time: 0.1 sec
+
+ Current Memory Usage: 322.548 Meg
+
+Tue Jul 24 03:45:16 2018
+

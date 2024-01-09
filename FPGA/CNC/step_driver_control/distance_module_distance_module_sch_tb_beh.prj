@@ -1,0 +1,4 @@
+verilog work "distance_module.vf"
+vhdl work "distance_test.vhd"
+verilog work "input_schheme.vf"
+verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

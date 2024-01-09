@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/topboard_topboard_sch_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="topboard_topboard_sch_tb" />
+            <top_module name="vcomponents" />
+            <top_module name="vl_types" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/topboard_topboard_sch_tb/a1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">a1</obj_property>
+      <obj_property name="ObjectShortName">a1</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/a2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">a2</obj_property>
+      <obj_property name="ObjectShortName">a2</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/b1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">b1</obj_property>
+      <obj_property name="ObjectShortName">b1</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/b2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">b2</obj_property>
+      <obj_property name="ObjectShortName">b2</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/work_enable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">work_enable</obj_property>
+      <obj_property name="ObjectShortName">work_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/set_enable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">set_enable</obj_property>
+      <obj_property name="ObjectShortName">set_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/set_div_data" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">set_div_data</obj_property>
+      <obj_property name="ObjectShortName">set_div_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/set_div_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">set_div_clk</obj_property>
+      <obj_property name="ObjectShortName">set_div_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/sys_clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sys_clock</obj_property>
+      <obj_property name="ObjectShortName">sys_clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/set_dist_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">set_dist_clk</obj_property>
+      <obj_property name="ObjectShortName">set_dist_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/set_dist_data" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">set_dist_data</obj_property>
+      <obj_property name="ObjectShortName">set_dist_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/dist_finish" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dist_finish</obj_property>
+      <obj_property name="ObjectShortName">dist_finish</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topboard_topboard_sch_tb/dir_is_up" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dir_is_up</obj_property>
+      <obj_property name="ObjectShortName">dir_is_up</obj_property>
+   </wvobject>
+</wave_config>

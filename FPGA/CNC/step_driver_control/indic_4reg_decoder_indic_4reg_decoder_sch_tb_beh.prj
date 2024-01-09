@@ -1,0 +1,7 @@
+verilog work "i7led_decoder.vf"
+verilog work "indic_4reg_decoder.vf"
+vhdl work "indic_4reg_dec_test.vhd"
+verilog work "count_bidir_4.vf"
+verilog work "count_test.vf"
+verilog work "input_schheme.vf"
+verilog work "/srv/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

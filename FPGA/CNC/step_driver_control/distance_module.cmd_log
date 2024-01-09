@@ -1,0 +1,8 @@
+sch2sym -intstyle ise -family spartan6 -w -refsym distance_module /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.sym 
+xst -intstyle ise -ifn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.xst" -ofn "/home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-3 distance_module.ngc distance_module.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o distance_module_map.ncd distance_module.ngd distance_module.pcf 
+par -w -intstyle ise -ol high -mt off distance_module_map.ncd distance_module.ncd distance_module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml distance_module.twx distance_module.ncd -o distance_module.twr distance_module.pcf 
+bitgen -intstyle ise -f distance_module.ut distance_module.ncd 
+sch2sym -intstyle ise -family spartan6 -w -refsym distance_module /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.sch /home/trurl/STM32_Devel/FPGA/CNC/step_driver_control/distance_module.sym 

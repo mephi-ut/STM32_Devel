@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/Button_green_off.png</file>
+        <file>images/Button_green_on.png</file>
+        <file>images/Button_red_off.png</file>
+        <file>images/Button_red_on.png</file>
+        <file>images/Button_disable.png</file>
+    </qresource>
+</RCC>

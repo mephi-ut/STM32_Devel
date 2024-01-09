@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn "/home/lusius/Devel/STM32_Devel/FPGA/tst1/tst/tst1.xst" -ofn "/home/lusius/Devel/STM32_Devel/FPGA/tst1/tst/tst1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-3 tst1.ngc tst1.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o tst1_map.ncd tst1.ngd tst1.pcf 

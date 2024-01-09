@@ -1,0 +1,15 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Jul 18 18:56:35 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clear" LOCATE = SITE "P22" LEVEL 1;
+COMP "enbl" LOCATE = SITE "P46" LEVEL 1;
+COMP "up" LOCATE = SITE "P45" LEVEL 1;
+COMP "clock" LOCATE = SITE "P21" LEVEL 1;
+COMP "A1" LOCATE = SITE "P10" LEVEL 1;
+COMP "A2" LOCATE = SITE "P11" LEVEL 1;
+COMP "B1" LOCATE = SITE "P12" LEVEL 1;
+COMP "B2" LOCATE = SITE "P15" LEVEL 1;
+SCHEMATIC END;
+

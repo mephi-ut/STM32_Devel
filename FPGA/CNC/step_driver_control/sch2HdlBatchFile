@@ -1,0 +1,2 @@
+sch2hdl,-intstyle,ise,-family,spartan6,-verilog,/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/indic_4reg_decoder.vf,-w,/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/indic_4reg_decoder.sch
+sch2hdl,-intstyle,ise,-family,spartan6,-verilog,/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/topboard.vf,-w,/home/lusius/Devel/STM32_Devel/FPGA/CNC/step_driver_control/topboard.sch
